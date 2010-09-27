@@ -1,0 +1,48 @@
+div.container {
+	margin: 20px;
+}
+
+div.container table {
+	width: 100%;
+}
+
+div.container table tr td {
+	padding: 10px;
+	vertical-align: top;
+}
+div.container table tr td input {
+	width: 100%;
+}
+
+div.container table tr td textarea {
+	width: 100%;
+	height: 200px;
+}
+
+div.containerlist {
+	margin: 20px;
+}
+
+div.containerlist table {
+	border-top: 1px black solid;
+	width: 100%;
+}
+
+div.containerlist table tr td {
+	padding: 10px;
+	vertical-align: top;
+	border-bottom: 1px black solid;
+	padding: 2px 5px 2px 10px;
+}
+div.containerlist table tr.header td {
+	background-color: #bbffbb;
+}
+div.containerlist table tr td input {
+	width: 100%;
+}
+
+div.containerlist table tr td textarea {
+	width: 100%;
+	height: 200px;
+}
+

@@ -1,0 +1,61 @@
+div.element_container {
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	background-image: url(/img/admin/c-none.gif);
+	background-repeat: repeat-y;
+	border: 0px white solid;
+}
+div.element_container img {
+	margin-right: 3px;
+}
+div.element_container div.text {
+	font-size: 13px;
+	background-repeat: no-repeat;
+	background-position: 18px top;
+	height: 18px;
+	padding-left: 36px;
+}
+div.element_container-last {
+	background-image: url(/img/admin/c-none-corner.gif);
+	background-repeat: no-repeat;
+}
+div.element_container div.marker, div.element_container div.marker-last, div.element_container div.emptymarker {
+	float: left;
+	width: 18px;
+	height: 18px;
+	border: 0px blue solid;
+}
+div.element_container div.emptymarker {
+	background-image: url(/img/admin/c-none-cross.gif);
+}
+div.emptymarker-last {
+	background-image: url(/img/admin/c-none-corner.gif);
+}
+div.plus {
+	background-image: url(/img/admin/c-plus-cross.gif);
+}
+div.plus-last {
+	background-image: url(/img/admin/c-plus-corner.gif);
+}
+div.minus {
+	background-image: url(/img/admin/c-minus-cross.gif);
+}
+div.minus-last {
+	background-image: url(/img/admin/c-minus-corner.gif);
+}
+div.subelements {
+	margin-left: 18px;
+	border: 0px blue solid;
+}
+div.tree_container {
+	border: 6px #dddddd solid;
+	margin-bottom: 10px;
+}
+div.tree_container h1 {
+	background-color: #dddddd;
+	padding: 5px 0px 10px 0px;
+}
+div.buttons {
+	float: right;
+	border: 0px red solid;
+}

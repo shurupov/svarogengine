@@ -1,0 +1,18 @@
+#Allow from all
+
+RewriteEngine On
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_URI} !^/index.php
+
+#Заходим в админку
+RewriteRule ^svarogengine/.*$ - [L]
+
+#Открываем разделы сайта и некоторые папки 
+RewriteRule ^css/.*$ - [L]
+Rewriterule ^img/.*$ - [L]
+Rewriterule ^js/.*$ - [L]
+Rewriterule ^files/.*$ - [L]
+RewriteRule ^(([a-zA-Z][a-zA-Z0-9]+)(/[a-zA-Z][a-zA-Z0-9]+)*)/?(/(.*)\.html)?$ index.php?alias=$1&params=$4 [L]
+RewriteRule ^.*$ index.php [L]
+

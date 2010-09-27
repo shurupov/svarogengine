@@ -1,0 +1,39 @@
+.top {
+	border: 0px red solid;
+	height: 100px;
+	background-color: #ddd;
+}
+.top .logodiv {
+	border: 0px blue solid;
+	height: 100px;
+	width: 300px;
+	float: left;
+}
+img.logo {
+	width: 71px;
+	height: 100px;
+	margin-left: 14px;
+	margin-right: 15px;
+	float: left;
+}
+.top .userdiv {
+	border: 0px blue solid;
+	width: 250px;
+	float: right;
+	padding-top: 20px;
+	text-align: right;
+}
+.top .menu {
+	border: 0px blue solid;
+	padding-top: 20px;
+}
+.top .menu a {
+	color: #930d0d;
+	font-weight: bold;
+	padding: 5px 10px 5px 10px;
+	text-decoration: none;
+}
+.top .menu a#active {
+	color: #ffffff;
+	background-color: #930d0d;
+}
