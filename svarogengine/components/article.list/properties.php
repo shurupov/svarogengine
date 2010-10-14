@@ -39,6 +39,18 @@
 				),
 				"show_keys" => 1,
 			),
+			"p4" => array(
+				"name" => "p4",
+				"title" => "Количество статей на странице",
+				"editor" => "select_from_consts",
+				"variants" => array(
+					"5" => "5",
+					"10" => "10",
+					"20" => "20",
+					"50" => "50"
+				),
+				"show_keys" => 0,
+			)
 		)
 	);
 ?>

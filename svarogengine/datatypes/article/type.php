@@ -43,7 +43,7 @@
 			"name" => "Статьи",
 			"subelement_types" => null,
 			"mainsubelement_type" => null,
-			"in_root" => false, //Отображать в корне дерева
+			"in_root" => false, //Не отображать в корне дерева
 			"list_settings" => array(
 				"viewer" => "simplelist",
 				"fields" => array(

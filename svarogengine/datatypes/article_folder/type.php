@@ -63,6 +63,11 @@
 					"editor" => "select_from_db",
 					"typelist" => "article_folder",
 				),
+				"alias" => array(
+					"name" => "alias",
+					"title" => "Внутреннее название",
+					"editor" => "input_text"
+				),
 			)
 		)
 	);

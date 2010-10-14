@@ -5,14 +5,29 @@
 	<title>Система управления контентом Сварог ###TITLE###</title>
 
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
-
+	
+	<style>
+		body {
+			background-image: url(/img/back.gif);
+			background-repeat: repeat-x;
+			background-position: top;
+		}
+		div.content {
+			width: 998px;
+			margin: 10px auto 10px auto;
+		}
+	</style>
+	
 </head>
 <body>
-	<div style="border: 1px blue solid;">
-		<?php $renderer->render_block('top_menu'); ?>
+	<div class="content">
+		<div style="border: 1px blue solid;">
+			<?php $renderer->render_block('top_menu'); ?>
+		</div>
+		<div style="border: 1px blue solid;">
+			<?php $renderer->render_main_block(); ?>
+		</div>
 	</div>
-	<div style="border: 1px blue solid;">
-		<?php $renderer->render_main_block(); ?>
-	</div>
+
 </body>
 </html>

@@ -3,24 +3,7 @@
 
 	<h1><? echo $params["article"]["title"]; ?></h1>
 	
-	<table class="tablecontent">
-		<tr>
-			<td id="td1"></td>
-			<td id="td2"></td>
-			<td id="td3"></td>
-		</tr>
-		<tr>
-			<td id="td4"></td>
-			<td id="td5"><? echo $params["article"]["text"]; ?></td>
-			<td id="td6"></td>
-		</tr>
-		<tr>
-			<td id="td7"></td>
-			<td id="td8"> </td>
-			<td id="td9"></td>
-		</tr>
-	</table>
-
+	<div><? echo $params["article"]["text"]; ?></div>
 
 <? }
 elseif ($params["type"]=="list") { ?>
@@ -41,7 +24,7 @@ elseif ($params["type"]=="list") { ?>
 				<? foreach ($params['list'] as $article) { ?>
 					<tr>
 					<td class="listitem">
-						<?php $url = '/typical/'.$params["theme"]["article_alias"].'.'.$article['id'].'.html'; ?>
+						<?php $url = '/'.$_GET['alias'].'/'.$params["theme"]["alias"].'.'.$article['id'].'.html'; ?>
 						<?php if ($article['has_preview']) { ?>
 							<a href="<?php echo $url; ?>"><img src="/files/article/preview/<?php echo $article['id']; ?>_1.jpeg" align=left style="margin-bottom: 10px; margin-right: 10px;"></a>
 						<?php } ?>

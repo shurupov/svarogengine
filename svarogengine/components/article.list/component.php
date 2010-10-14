@@ -16,50 +16,51 @@
 		
 		$result['page_path'] = $component_params["fullalias"];
 		
-		if (preg_match('/\/'.addslashes($result['theme']['article_alias']).'\.(\d+)\.html/',$page_params,$regs)) {
+		if (preg_match('/\/'.addslashes($result['theme']['alias']).'\.(\d+)\.html/',$page_params,$regs)) {
 			SQLExecuter::query("select * from sc_sa_article where id=".$regs[1]." and theme_id=".$component_params["p1"]);
 			if ($article = SQLExecuter::fetch()) {
 				$result["type"] = "article";
 				$result["article"] = $article;
-				return $result;
+				$params = $result;
 			}
-		}
-		
-		$page = 0;
-		
-		//echo $page_params;
-		
-		if (preg_match('/^\/page\.([\d]+)\.html$/',$page_params,$regs)) {
-			//print_r($regs);
-			$page = $regs[1];
-			//echo 'eee';
-		}
-		
-		//echo $page;
-		
-		SQLExecuter::query(
-			"select * from sc_sa_article 
-			where 
-				theme_id=".$component_params["p1"]."
-			order by ".$component_params["p2"]." ".$component_params["p3"]."
-			limit ".($page*$component_params["p4"]).",".($component_params["p4"])
-		);
-		$list = SQLExecuter::get_array();
-		
-		$result["type"] = "list";
-		$result["list"] = $list;			
-		
-		SQLExecuter::query('
-			SELECT COUNT(*)/'.$component_params["p4"].' as `c`
-			FROM `sc_sa_article`
-			WHERE `theme_id`='.$component_params["p1"].'
-		');
-		$pages_count = SQLExecuter::fetch();
-		
-		$result['pages_count'] = ceil($pages_count['c']);
-		$result['page'] = $page;
-		
-		$params = $result;
+		} else {
 			
+			$page = 0;
+			
+			//echo $page_params;
+			
+			if (preg_match('/^\/page\.([\d]+)\.html$/',$page_params,$regs)) {
+				//print_r($regs);
+				$page = $regs[1];
+				//echo 'eee';
+			}
+			
+			//echo $page;
+			
+			SQLExecuter::query(
+				"select * from sc_sa_article 
+				where 
+					theme_id=".$component_params["p1"]."
+				order by ".$component_params["p2"]." ".$component_params["p3"]."
+				limit ".($page*$component_params["p4"]).",".($component_params["p4"])
+			);
+			$list = SQLExecuter::get_array();
+			
+			$result["type"] = "list";
+			$result["list"] = $list;			
+			
+			SQLExecuter::query('
+				SELECT COUNT(*)/'.$component_params["p4"].' as `c`
+				FROM `sc_sa_article`
+				WHERE `theme_id`='.$component_params["p1"].'
+			');
+			$pages_count = SQLExecuter::fetch();
+			
+			$result['pages_count'] = ceil($pages_count['c']);
+			$result['page'] = $page;
+			
+			$params = $result;
+			
+		}
 	
 ?>
