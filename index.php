@@ -25,6 +25,9 @@
 	//Вывод параметров страницы в массив
 	$partition_params = SQLExecuter::fetch();
 	
+	if ((!isset($_GET["alias"]))or($_GET["alias"]==""))
+		$_GET['alias'] = $partition_params['alias'];
+	
 	if ((!isset($_GET["params"]))or($_GET["params"]==""))
 		$_GET["params"] = '';
 	

@@ -24,7 +24,7 @@ elseif ($params["type"]=="list") { ?>
 				<? foreach ($params['list'] as $article) { ?>
 					<tr>
 					<td class="listitem">
-						<?php $url = '/'.$_GET['alias'].'/'.$params["theme"]["alias"].'.'.$article['id'].'.html'; ?>
+						<?php $url = '/'.$params['partition_alias'].'/'.$params["theme"]["alias"].'.'.$article['id'].'.html'; ?>
 						<?php if ($article['has_preview']) { ?>
 							<a href="<?php echo $url; ?>"><img src="/files/article/preview/<?php echo $article['id']; ?>_1.jpeg" align=left style="margin-bottom: 10px; margin-right: 10px;"></a>
 						<?php } ?>

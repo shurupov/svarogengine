@@ -5,22 +5,28 @@
 	<title>Система управления контентом Сварог ###TITLE###</title>
 
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
-	
-	<style>
-		body {
-			background-image: url(/img/back.gif);
-			background-repeat: repeat-x;
-			background-position: top;
-		}
-		div.content {
-			width: 998px;
-			margin: 10px auto 10px auto;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	
 </head>
 <body>
 	<div class="content">
+		<div class="header">
+			<div style="float: left;">
+				
+				<!--[if !(IE )|(gt IE 6)]><!--> 
+				<a href="/"><img src="/img/logo.png" style="width: 177px; height: 159px;" /></a>
+				<!--<![endif]--> 
+				<!--[if lte IE 6]>
+				<a href="/"><img style="width: 177px; height: 159px;" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/logo.png', sizingMethod='scale');" src="/img/ie.gif" /></a>
+				<![endif]--> 
+				
+			</div>
+			<div class="right_contacts">
+				<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">030-01-23</span>
+				<br/>
+				<a class="email" href="mailto:elfoff@hotmail.com">elfoff@hotmail.com</a>
+			</div>
+		</div>
 		<div style="border: 1px blue solid;">
 			<?php $renderer->render_block('top_menu'); ?>
 		</div>

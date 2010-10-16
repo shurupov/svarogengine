@@ -1,0 +1,42 @@
+body {
+	background-image: url(/img/back.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+}
+div.content {
+	width: 998px;
+	margin: 10px auto 10px auto;
+}
+div.header {
+	height: 174px;
+}
+div.header div.right_contacts {
+	float: right;
+	padding-top: 35px;
+	text-align: right;
+}
+div.header div.right_contacts span.seven {
+	font-family: Arial;
+	font-size: 28px;
+	color: #1e640f;
+}
+div.header div.right_contacts span.city_code {
+	font-family: Arial;
+	font-size: 38px;
+	color: #323232;
+}
+div.header div.right_contacts span.phone {
+	font-family: Arial;
+	font-size: 38px;
+	color: #dc0000;
+}
+div.header div.right_contacts a.email {
+	font-family: Arial;
+	font-size: 22px;
+	color: #960000;
+	text-decoration: none;
+	line-height: 30px;
+}
+div.header div.right_contacts a.email:hover {
+	text-decoration: underline;
+}
