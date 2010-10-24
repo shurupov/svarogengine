@@ -2,10 +2,11 @@ body {
 	background-image: url(/img/back.gif);
 	background-repeat: repeat-x;
 	background-position: top;
+	background-color: #ebebeb;
 }
 div.content {
 	width: 998px;
-	margin: 10px auto 10px auto;
+	margin: 10px auto 0px auto;
 }
 div.header {
 	height: 174px;
@@ -39,4 +40,71 @@ div.header div.right_contacts a.email {
 }
 div.header div.right_contacts a.email:hover {
 	text-decoration: underline;
+}
+div.top_menu {
+	height: 35px;
+}
+div.top_menu div.menuitemleft {
+	float: left;
+	height: 35px;
+	margin-left: 14px;
+	background-image: url(/img/menuitem_l.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-left: 10px;
+}
+div.top_menu div.menuitemright {
+	float: left;
+	height: 35px;
+	background-image: url(/img/menuitem_r.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-right: 10px;
+}
+div.center {
+	height: 35px;
+	background-color: #8c8c8c;
+}
+div.top_menu div.center a, div.top_menu div.selected div.center span {
+	line-height: 35px;
+	white-space: nowrap;
+	vertical-align: middle;
+	font-family: Arial;
+	font-size: 18px;
+	color: #ffffff;
+}
+div.top_menu div.selected div.menuitemleft {
+	background-image: url(/img/selectedmenuitemleft.gif);
+}
+div.top_menu div.selected div.menuitemright {
+	background-image: url(/img/selectedmenuitemright.gif);
+}
+div.top_menu div.selected div.center {
+	background-image: url(/img/selectedmenuitemcenter.gif);
+}
+div.top_menu_gray_line {
+	height: 5px;
+	background-color: #8c8c8c;
+}
+div.top_menu_graphic {
+	background-image: url(/img/graphic.png);
+	background-repeat: repeat-x;
+	height: 120px;
+}
+div.main_content {
+	background-color: #ffffff;
+	padding: 30px 30px 60px 30px;
+}
+div.bottomback {
+	background-image: url(/img/bottomback.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+div.footer {
+	height: 50px;
+	color: #787878;
+	font-family: Arial;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 40px;
 }
