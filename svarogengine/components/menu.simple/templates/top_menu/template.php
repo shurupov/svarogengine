@@ -31,18 +31,17 @@
 ?>
 	</div>
 	<div class="top_menu_gray_line"></div>
-	<div class="top_menu_graphic"><div id="selected-track" style="background: #ffffff; opacity: 0.5; height: 100%; position: relative; filter: alpha(opacity=50);"></div></div>
+	<div class="top_menu_graphic"><div id="selected-track" style="background-image: url(/img/selectedtrack.png); background-color: #ffffff; opacity: 0.5; height: 100%; position: relative;"></div></div>
 	<div class="top_menu_gray_line" style="height: 10px;"></div>
 	
 	<script>
 		
 		$(document).ready(function() {
 			
-			//console.log($('.top_menu .selected').width());
-			
 			$('#selected-track').css('width',($('.top_menu .selected .menuitemleft').width()+10)+'px');
 			left = $('.top_menu .selected .menuitemleft').offset().left-$('.top_menu').offset().left;
 			$('#selected-track').css('left',left+'px');
+			$('#selected-track').css('background-position','-'+(left-1)+'px top');
 			
 		});
 		
