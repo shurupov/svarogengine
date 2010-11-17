@@ -9,7 +9,18 @@
 	
 	$result = array();
 	
+	SQLExecuter::query('
+		SELECT *
+		FROM `sc_sa_article`
+		WHERE `id`="'.$component_params['p2'].'"
+	');
+	
+	$article = SQLExecuter::fetch();
+	
+	$result['text'] = $article['text'];
+	
 	if ($_POST['facepost']) {
+		
 		$values = $_POST['field'];
 		$body = 'Форма онлайн отправки<br>';
 		$body .= '<table>';
@@ -25,7 +36,7 @@
 		$body .= '<tr><td colspan=2 align=center>'.$result['request']['title'].'</td></tr>';
 		$body .= '<tr><td colspan=2 align=center>'.nl2br($result['request']['request']).'</td></tr>';
 		
-		$sql_executer->query('
+		SQLExecuter::query('
 			SELECT *
 			FROM `sc_onpo_field`
 			WHERE `request_id`="'.$id.'"
@@ -48,15 +59,16 @@
 		
 		$body .= '</table>';
 		
+		$to  = $result['request']['email_to'];
+		$from  = $result['request']['email_from'];
+		
 		SQLExecuter::query('
 			INSERT INTO `sc_onpo_sended`
-			(`request_id`,`time_sended`,`body`,`email`)
+			(`request_id`,`time_sended`,`body`,`email_to`,`email_from`)
 			VALUES
-			("'.$id.'","'.time().'","'.addslashes($body).'","'.$result['request']['email'].'")
+			("'.$id.'","'.time().'","'.addslashes($body).'","'.$result['request']['email_to'].'","'.$result['request']['email_from'].'")
 		');
 		
-		$to  = $result['request']['email'];
-
 		// subject
 		$subject = $result['request']['title'];
 
@@ -78,7 +90,7 @@
 
 		// Additional headers
 		//$headers .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
-		$headers .= 'From: automail@karramba.su' . "\r\n";
+		$headers .= 'From: '.$from . "\r\n";
 		//$headers .= 'Subject: Онлайн-отправка ' . $subject . "\r\n";
 		
 		//$headers .= 'Cc: birthdayarchive@example.com' . "\r\n";

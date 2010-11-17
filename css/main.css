@@ -3,6 +3,71 @@ body {
 	background-repeat: repeat-x;
 	background-position: top;
 	background-color: #ebebeb;
+	
+	color: #373737;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 20px;
+}
+a {
+	color: #1d650e;
+}
+p {
+	line-height: 20px;
+}
+form input[type=text], textarea {
+	border: 1px #969696 solid;
+	font-size: 16px;
+	font-family: Arial;
+	color: #373737;
+	width: 100%;
+}
+textarea {
+	height: 100px;
+}
+h2 {
+	color: #1d650e;
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 30px;
+}
+div.main_content h1 {
+	color: #1d650e;
+	font-family: Arial;
+	font-size: 30px;
+	font-weight: normal;
+	line-height: 40px;
+}
+div.main_content div.article table {
+	width: 100%;
+	border-top: 1px #c9c9c9 solid;
+	border-left: 1px #c9c9c9 solid;
+	text-align: left;
+}
+div.main_content div.article table tr th {
+	background-color: #a2ffa2;
+	color: #373737;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 8px;
+	border-bottom: 1px #c9c9c9 solid;
+	border-right: 1px #c9c9c9 solid;
+}
+div.main_content div.article table tr td {
+	background-color: #ffffff;
+	color: #373737;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 8px;
+	border-bottom: 1px #c9c9c9 solid;
+	border-right: 1px #c9c9c9 solid;
+}
+div.main_content div.article table tr.second td {
+	background-color: #e0ffe0;
 }
 div.content {
 	width: 998px;

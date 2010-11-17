@@ -31,18 +31,21 @@
 ?>
 	</div>
 	<div class="top_menu_gray_line"></div>
-	<div class="top_menu_graphic"><div id="selected-track" style="background-image: url(/img/selectedtrack.png); background-color: #ffffff; opacity: 0.5; height: 100%; position: relative;"></div></div>
+	<div class="top_menu_graphic"><div id="selected-track" style="background-image: url(/img/selectedtrack.png); background-color: #ffffff; opacity: 0.5; height: 100%; width: 0px; position: relative;"></div></div>
 	<div class="top_menu_gray_line" style="height: 10px;"></div>
 	
 	<script>
 		
 		$(document).ready(function() {
 			
-			$('#selected-track').css('width',($('.top_menu .selected .menuitemleft').width()+10)+'px');
-			left = $('.top_menu .selected .menuitemleft').offset().left-$('.top_menu').offset().left;
-			$('#selected-track').css('left',left+'px');
-			$('#selected-track').css('background-position','-'+(left-1)+'px top');
-			
+			if ($('.top_menu .selected .menuitemleft').offset()!=null) {
+				$('#selected-track').css('width',($('.top_menu .selected .menuitemleft').width()+10)+'px');
+				left = $('.top_menu .selected .menuitemleft').offset().left-$('.top_menu').offset().left;
+				$('#selected-track').css('left',left+'px');
+				$('#selected-track').css('background-position','-'+(left-1)+'px top');
+			} else {
+				$('#selected-track').css('width','0px');
+			}
 		});
 		
 	</script>

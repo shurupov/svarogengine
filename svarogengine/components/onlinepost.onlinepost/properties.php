@@ -16,6 +16,12 @@
 				"title" => "Номер формы",
 				"editor" => "input_text",
 			),
+			"p2" => array(
+				"name" => "p2",
+				"title" => "Текст из статьи",
+				"editor" => "select_from_db",
+				"typelist" => "article",
+			),
 		)
 	);
 ?>
