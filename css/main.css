@@ -52,7 +52,7 @@ div.main_content div.article table tr th {
 	font-family: Arial;
 	font-size: 14px;
 	font-weight: normal;
-	padding: 8px;
+	padding: 4px 8px 4px 8px;
 	border-bottom: 1px #c9c9c9 solid;
 	border-right: 1px #c9c9c9 solid;
 }
@@ -62,7 +62,7 @@ div.main_content div.article table tr td {
 	font-family: Arial;
 	font-size: 14px;
 	font-weight: normal;
-	padding: 8px;
+	padding: 4px 8px 4px 8px;
 	border-bottom: 1px #c9c9c9 solid;
 	border-right: 1px #c9c9c9 solid;
 }

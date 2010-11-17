@@ -20,11 +20,12 @@
 						
 					}
 				?>
-				<input type="hidden" name="facepost" value="1"><input type="submit" value="Отправить" class="<?php echo $params['request']['class_field']; ?>" style="width: 150px;">
+				<input type="hidden" name="facepost" value="1">
+				<input type="submit" value="Отправить" class="<?php echo $params['request']['class_field']; ?>" style="width: 150px;">
 				
 				</form>
 				<?php } else { ?>
-					<h1>Спасибо, Ваши данные успешно отправлены!</h1>
+					<h2>Спасибо, Ваши данные успешно отправлены!</h2>
 				<?php } ?>				
 			</td>
 		</tr>
