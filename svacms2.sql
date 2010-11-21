@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 18 2010 г., 01:16
+-- Время создания: Ноя 22 2010 г., 01:03
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -25,7 +25,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Структура таблицы `sc_admin_face`
 --
 
-DROP TABLE IF EXISTS `sc_admin_face`;
 CREATE TABLE IF NOT EXISTS `sc_admin_face` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `alias` varchar(20) DEFAULT NULL,
@@ -84,7 +83,6 @@ INSERT INTO `sc_admin_face` (`id`, `alias`, `classalias`, `title`, `description`
 -- Структура таблицы `sc_admin_rights_face`
 --
 
-DROP TABLE IF EXISTS `sc_admin_rights_face`;
 CREATE TABLE IF NOT EXISTS `sc_admin_rights_face` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usergroup_id` int(11) NOT NULL,
@@ -113,7 +111,6 @@ INSERT INTO `sc_admin_rights_face` (`id`, `usergroup_id`, `adminface_id`) VALUES
 -- Структура таблицы `sc_admin_user`
 --
 
-DROP TABLE IF EXISTS `sc_admin_user`;
 CREATE TABLE IF NOT EXISTS `sc_admin_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
@@ -142,7 +139,6 @@ INSERT INTO `sc_admin_user` (`id`, `username`, `password`, `name`, `email`, `pos
 -- Структура таблицы `sc_admin_usergroup`
 --
 
-DROP TABLE IF EXISTS `sc_admin_usergroup`;
 CREATE TABLE IF NOT EXISTS `sc_admin_usergroup` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -168,7 +164,6 @@ INSERT INTO `sc_admin_usergroup` (`id`, `title`, `description`, `rights`) VALUES
 -- Структура таблицы `sc_admin_usergroup_rights`
 --
 
-DROP TABLE IF EXISTS `sc_admin_usergroup_rights`;
 CREATE TABLE IF NOT EXISTS `sc_admin_usergroup_rights` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usergroup_id` int(11) NOT NULL,
@@ -192,7 +187,6 @@ INSERT INTO `sc_admin_usergroup_rights` (`id`, `usergroup_id`, `panel_alias`) VA
 -- Структура таблицы `sc_block`
 --
 
-DROP TABLE IF EXISTS `sc_block`;
 CREATE TABLE IF NOT EXISTS `sc_block` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -227,7 +221,6 @@ INSERT INTO `sc_block` (`id`, `title`, `alias`, `comptype_alias`, `blocklist_id`
 -- Структура таблицы `sc_blocklist`
 --
 
-DROP TABLE IF EXISTS `sc_blocklist`;
 CREATE TABLE IF NOT EXISTS `sc_blocklist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -250,7 +243,6 @@ INSERT INTO `sc_blocklist` (`id`, `title`, `alias`, `description`, `sort`) VALUE
 -- Структура таблицы `sc_menu`
 --
 
-DROP TABLE IF EXISTS `sc_menu`;
 CREATE TABLE IF NOT EXISTS `sc_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `alias` varchar(255) NOT NULL,
@@ -272,24 +264,25 @@ INSERT INTO `sc_menu` (`id`, `alias`, `title`, `sort`) VALUES
 -- Структура таблицы `sc_onpo_field`
 --
 
-DROP TABLE IF EXISTS `sc_onpo_field`;
 CREATE TABLE IF NOT EXISTS `sc_onpo_field` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `fieldtype_alias` varchar(20) NOT NULL,
   `request_id` int(11) NOT NULL,
+  `nesessary` int(1) NOT NULL,
   `order` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Дамп данных таблицы `sc_onpo_field`
 --
 
-INSERT INTO `sc_onpo_field` (`id`, `title`, `fieldtype_alias`, `request_id`, `order`) VALUES
-(24, 'Какой тип работ вам требуется', 'textarea', 1, 40),
-(21, 'Ваше имя', 'text', 1, 10),
-(22, 'Ваши контакты (телефон, адрес)', 'textarea', 1, 20);
+INSERT INTO `sc_onpo_field` (`id`, `title`, `fieldtype_alias`, `request_id`, `nesessary`, `order`) VALUES
+(26, 'Ваша компания', 'text', 1, 0, 30),
+(21, 'Ваше имя', 'text', 1, 1, 10),
+(25, 'Адрес электронной почты', 'text', 1, 1, 20),
+(27, 'Ваш вопрос', 'textarea', 1, 1, 40);
 
 -- --------------------------------------------------------
 
@@ -297,7 +290,6 @@ INSERT INTO `sc_onpo_field` (`id`, `title`, `fieldtype_alias`, `request_id`, `or
 -- Структура таблицы `sc_onpo_fieldtype`
 --
 
-DROP TABLE IF EXISTS `sc_onpo_fieldtype`;
 CREATE TABLE IF NOT EXISTS `sc_onpo_fieldtype` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -323,7 +315,6 @@ INSERT INTO `sc_onpo_fieldtype` (`id`, `title`, `alias`) VALUES
 -- Структура таблицы `sc_onpo_multifield_value`
 --
 
-DROP TABLE IF EXISTS `sc_onpo_multifield_value`;
 CREATE TABLE IF NOT EXISTS `sc_onpo_multifield_value` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `field_id` int(11) NOT NULL,
@@ -393,7 +384,6 @@ INSERT INTO `sc_onpo_multifield_value` (`id`, `field_id`, `value`) VALUES
 -- Структура таблицы `sc_onpo_request`
 --
 
-DROP TABLE IF EXISTS `sc_onpo_request`;
 CREATE TABLE IF NOT EXISTS `sc_onpo_request` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -418,7 +408,6 @@ INSERT INTO `sc_onpo_request` (`id`, `title`, `email_to`, `email_from`, `request
 -- Структура таблицы `sc_onpo_sended`
 --
 
-DROP TABLE IF EXISTS `sc_onpo_sended`;
 CREATE TABLE IF NOT EXISTS `sc_onpo_sended` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `request_id` int(11) NOT NULL,
@@ -428,7 +417,7 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_sended` (
   `body` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Дамп данных таблицы `sc_onpo_sended`
@@ -456,7 +445,16 @@ INSERT INTO `sc_onpo_sended` (`id`, `request_id`, `email_to`, `email_from`, `tim
 (19, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1289939961, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>rewr</td></tr><tr><td>Ваши контакты (телефон, адрес)</td><td>rewrwerw</td></tr><tr><td>Какой тип работ вам требуется</td><td>rwerwew</td></tr></table>'),
 (20, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290029735, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Ваши контакты (телефон, адрес)</td><td>у меня есть телефон, но я вам его не скажу</td></tr><tr><td>Какой тип работ вам требуется</td><td>пусконаладочные</td></tr></table>'),
 (21, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290029784, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Ваши контакты (телефон, адрес)</td><td>у меня есть телефон, но я вам его не скажу</td></tr><tr><td>Какой тип работ вам требуется</td><td>пусконаладочные</td></tr></table>'),
-(22, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290031522, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>rer</td></tr><tr><td>Ваши контакты (телефон, адрес)</td><td>rer</td></tr><tr><td>Какой тип работ вам требуется</td><td>rere</td></tr></table>');
+(22, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290031522, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>rer</td></tr><tr><td>Ваши контакты (телефон, адрес)</td><td>rer</td></tr><tr><td>Какой тип работ вам требуется</td><td>rere</td></tr></table>'),
+(23, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290357655, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>ervewrwer</td></tr><tr><td>Адрес электронной почты</td><td>werwfrw</td></tr><tr><td>Ваша компания</td><td>fwererwrgw</td></tr><tr><td>Ваш вопрос</td><td>rwvrevrwrwrv rwerw</td></tr></table>'),
+(24, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290357704, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>gdfgdfg dfg dfg</td></tr><tr><td>Адрес электронной почты</td><td>rweret er er </td></tr><tr><td>Ваша компания</td><td>ededede</td></tr><tr><td>Ваш вопрос</td><td>dedededede de d e d ede</td></tr></table>'),
+(25, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290366737, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>аываа</td></tr><tr><td>Адрес электронной почты</td><td>авыаы</td></tr><tr><td>Ваша компания</td><td>аываыв</td></tr><tr><td>Ваш вопрос</td><td>авыаыв</td></tr></table>'),
+(26, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290375869, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>vdfgdg</td></tr><tr><td>Адрес электронной почты</td><td></td></tr><tr><td>Ваша компания</td><td></td></tr><tr><td>Ваш вопрос</td><td></td></tr></table>'),
+(27, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290375919, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>vdfgdg</td></tr><tr><td>Адрес электронной почты</td><td></td></tr><tr><td>Ваша компания</td><td></td></tr><tr><td>Ваш вопрос</td><td></td></tr></table>'),
+(28, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290375953, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>fdfdg</td></tr><tr><td>Адрес электронной почты</td><td></td></tr><tr><td>Ваша компания</td><td></td></tr><tr><td>Ваш вопрос</td><td></td></tr></table>'),
+(29, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376053, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr></table>'),
+(30, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376350, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Адрес электронной почты</td><td>evg.bolt@bk.ru</td></tr><tr><td>Ваша компания</td><td></td></tr><tr><td>Ваш вопрос</td><td>Озвучьте мне видео, пожалуйста...</td></tr></table>'),
+(31, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376438, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Адрес электронной почты</td><td>evg.bolt@bk.ru</td></tr><tr><td>Ваша компания</td><td>Компания</td></tr><tr><td>Ваш вопрос</td><td>А?</td></tr></table>');
 
 -- --------------------------------------------------------
 
@@ -464,7 +462,6 @@ INSERT INTO `sc_onpo_sended` (`id`, `request_id`, `email_to`, `email_from`, `tim
 -- Структура таблицы `sc_option`
 --
 
-DROP TABLE IF EXISTS `sc_option`;
 CREATE TABLE IF NOT EXISTS `sc_option` (
   `param_name` varchar(255) NOT NULL,
   `param_value` varchar(255) NOT NULL
@@ -484,7 +481,6 @@ INSERT INTO `sc_option` (`param_name`, `param_value`) VALUES
 -- Структура таблицы `sc_partition`
 --
 
-DROP TABLE IF EXISTS `sc_partition`;
 CREATE TABLE IF NOT EXISTS `sc_partition` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_id` int(11) NOT NULL,
@@ -517,7 +513,7 @@ CREATE TABLE IF NOT EXISTS `sc_partition` (
 --
 
 INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `title`, `linktitle`, `alias`, `fullalias`, `blocklist_id`, `comptype_alias`, `depth`, `template_alias`, `comptpl_alias`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `sort`) VALUES
-(118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '', '', '', '', '', '', 0),
+(118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '0', '', '', '', '', '', 0),
 (116, 1, 0, 1, '', 'Видео-ролики', 'Видео-ролики', 'video', 'video', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
 (117, 1, 0, 1, '', 'Цены', 'Цены', 'prices', 'prices', 12, 'article.article', 0, 'main', 'a_f_article', '68', '', '', '', '', '', '', '', 0),
 (113, 1, 0, 0, '', 'Главная', 'Главная', 'main', 'main', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
@@ -530,7 +526,6 @@ INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `tit
 -- Структура таблицы `sc_sa_article`
 --
 
-DROP TABLE IF EXISTS `sc_sa_article`;
 CREATE TABLE IF NOT EXISTS `sc_sa_article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `theme_id` int(11) NOT NULL,
@@ -558,7 +553,6 @@ INSERT INTO `sc_sa_article` (`id`, `theme_id`, `has_preview`, `title`, `pre_text
 -- Структура таблицы `sc_sa_theme`
 --
 
-DROP TABLE IF EXISTS `sc_sa_theme`;
 CREATE TABLE IF NOT EXISTS `sc_sa_theme` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL,

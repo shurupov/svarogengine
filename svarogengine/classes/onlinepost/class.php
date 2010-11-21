@@ -355,22 +355,24 @@
 			
 		}
 		
-		static function get_html_from_field($question,$values = array()) {
+		static function get_html_from_field($question,$value) {
 			
 			global $sql_executer;
 			
+			$result = array();
+			
 			switch ($question['fieldtype_alias']) {
 				case "text" :
-					$html = '<input type="text" name="field['.$question['id'].']" class="'.$result['request']['class_field'].'" value="'.$values[$question['id']].'">';
+					$html = '<input type="text" name="field['.$question['id'].']" class="'.$result['request']['class_field'].'" value="'.$value.'">';
 				break;
 				case "textarea" :
-					$html = '<textarea name="field['.$question['id'].']" class="'.$result['request']['class_field'].'">'.$values[$question['id']].'</textarea>';
+					$html = '<textarea name="field['.$question['id'].']" class="'.$result['request']['class_field'].'">'.$value.'</textarea>';
 				break;
 				case "select" :
 					$html = '<select name="field['.$question['id'].']" class="'.$result['request']['class_field'].'">';
 					$sql_executer->query('SELECT * FROM `sc_onpo_multifield_value` WHERE `field_id`="'.$question['id'].'"');
 					while ($f = $sql_executer->fetch()) {
-						$html .= '<option value="'.$f['value'].'" '.(($f['value']==$values[$question['id']])?'selected':'').'>'.$f['value'].'</option>';
+						$html .= '<option value="'.$f['value'].'" '.(($f['value']==$value)?'selected':'').'>'.$f['value'].'</option>';
 					}
 					$html .= '</select>';
 				break;
@@ -378,18 +380,18 @@
 					$html = '';
 					$sql_executer->query('SELECT * FROM `sc_onpo_multifield_value` WHERE `field_id`="'.$question['id'].'"');
 					while ($f = $sql_executer->fetch()) {
-						$html .= '<label><input type="radio" name="field['.$question['id'].']" class="'.$result['request']['class_field'].'" '.(($f['value']==$values[$question['id']])?'checked':'').' value="'.$f['value'].'">'.$f['value'].'</label><br>';
+						$html .= '<label><input type="radio" name="field['.$question['id'].']" class="'.$result['request']['class_field'].'" '.(($f['value']==$value)?'checked':'').' value="'.$f['value'].'">'.$f['value'].'</label><br>';
 					}
 				break;
 				case "checkbox" :
-					$html = '<input type="checkbox" name="field['.$question['id'].']" class="'.$result['request']['class_field'].'" value="да" '.(('1'==$values[$question['id']])?'checked':'').'>';
+					$html = '<input type="checkbox" name="field['.$question['id'].']" class="'.$result['request']['class_field'].'" value="да" '.(('1'==$value)?'checked':'').'>';
 				break;
 				case "multiselect" :
 					if (!$values[$question['id']]) $values[$question['id']] = array();
 					$html = '<select name="field['.$question['id'].'][]" class="'.$result['request']['class_field'].'" multiple>';
 					$sql_executer->query('SELECT * FROM `sc_onpo_multifield_value` WHERE `field_id`="'.$question['id'].'"');
 					while ($f = $sql_executer->fetch()) {
-						$html .= '<option value="'.$f['value'].'" '.((in_array($f['value'],$values[$question['id']]))?'selected':'').'>'.$f['value'].'</option>';
+						$html .= '<option value="'.$f['value'].'" '.((in_array($f['value'],$value))?'selected':'').'>'.$f['value'].'</option>';
 					}
 					$html .= '</select>';
 				break;

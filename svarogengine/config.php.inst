@@ -1,0 +1,17 @@
+<?php
+	
+	error_reporting(E_ERROR | E_PARSE);
+	
+	//Реквизиты доступа к базе данных
+	$db_host = "localhost";
+	$db_user = "root";
+	$db_pass = "123";
+	$db_base = "svacms2";
+	$db_type = "mysql5";
+	
+	//служебные переменные
+	$site_root = $_SERVER['DOCUMENT_ROOT'];
+	$engine_root = $site_root."/svarogengine";
+	$site_host = $_SERVER['HTTP_HOST'];
+	
+?>

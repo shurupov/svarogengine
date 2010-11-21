@@ -6,6 +6,14 @@
 	
 	$id = $component_params['p1'];
 	
+	SQLExecuter::query('
+		SELECT *
+		FROM `sc_onpo_field`
+		WHERE `request_id`="'.$id.'"
+		ORDER BY `order` asc
+	');
+	
+	$questions = SQLExecuter::get_array();
 	
 	$result = array();
 	
@@ -19,7 +27,25 @@
 	
 	$result['text'] = $article['text'];
 	
-	if ($_POST['facepost']) {
+	if ((isset($_POST['facepost']))&&($_POST['facepost'])) {
+		
+		$result['error'] = '';
+		
+		if (($component_params['p3'])&&($_SESSION['captcha_keystring'] != $_POST['captcha'])) {
+			$result['error'] .= 'Неправильно введён текст с картинки<br/>';
+		}
+		
+		foreach ($questions as $question) {
+			
+			if (($question['nesessary'])&&(!$_POST['field'][$question['id']])) {
+				$result['error'] .= 'Не введено поле &laquo;'.$question['title'].'&raquo;<br/>';
+			}
+			
+		}
+		
+	}
+	
+	if ((isset($_POST['facepost']))&&($_POST['facepost'])&&(!$result['error'])) {
 		
 		$values = $_POST['field'];
 		$body = 'Форма онлайн отправки<br>';
@@ -35,15 +61,6 @@
 		
 		$body .= '<tr><td colspan=2 align=center>'.$result['request']['title'].'</td></tr>';
 		$body .= '<tr><td colspan=2 align=center>'.nl2br($result['request']['request']).'</td></tr>';
-		
-		SQLExecuter::query('
-			SELECT *
-			FROM `sc_onpo_field`
-			WHERE `request_id`="'.$id.'"
-			ORDER BY `order` asc
-		');
-		
-		$questions = SQLExecuter::get_array();
 		
 		foreach ($questions as $question) {
 			
@@ -112,19 +129,16 @@
 	
 		$result['request'] = SQLExecuter::fetch();
 	
-		SQLExecuter::query('
-			SELECT *
-			FROM `sc_onpo_field`
-			WHERE `request_id`="'.$id.'"
-			ORDER BY `order` asc
-		');
-	
-		$questions = SQLExecuter::get_array();
-	
 		foreach ($questions as $k=>$question) {
 		
-			$questions[$k]['html'] = OnlinePost::get_html_from_field($question,$values);
+			$questions[$k]['html'] = OnlinePost::get_html_from_field($question,@$_POST['field'][$question['id']]);
 		
+		}
+		
+		if ($component_params['p3']) {
+			$questions['captcha']['nesessary'] = 1;
+			$questions['captcha']['title'] = 'Введите текст с картинки';
+			$questions['captcha']['html'] = '<input type="text" name="captcha" /><br/><img id="captchaimg" src="/quickdata/captcha/?'.session_name().'='.session_id().'&'.rand().'" /><br/><a style="border-bottom: 1px dotted; cursor: pointer;" onclick="$(\'#captchaimg\').attr(\'src\',\'/quickdata/captcha/?'.session_name().'='.session_id().'&\'+Math.random());">Обновить картинку</a><script></script>';
 		}
 	
 		$result['questions'] = $questions;

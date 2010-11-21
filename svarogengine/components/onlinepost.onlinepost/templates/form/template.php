@@ -12,11 +12,15 @@
 				<br>
 				
 				<form method=post class="<?php echo $params['request']['class_field']; ?>" style="width 100%;">
-				
+				<?php
+					if ($params['error']) {
+						echo '<div class="error">'.$params['error'].'</div>';
+					}
+				?>
 				<?php
 					foreach ($params['questions'] as $question) { 
 						
-						echo $question['title'].':<br/>'.$question['html'].'<br/><br/>';
+						echo $question['title'].($question['nesessary']?'<span class="nesessary">*</span>':'').':<br/>'.$question['html'].'<br/><br/>';
 						
 					}
 				?>

@@ -8,6 +8,9 @@ RewriteEngine On
 #Заходим в админку
 RewriteRule ^svarogengine/.*$ - [L]
 
+#Открываем быстрые данные
+RewriteRule ^quickdata/.*$ - [L]
+
 #Открываем разделы сайта и некоторые папки 
 RewriteRule ^css/.*$ - [L]
 Rewriterule ^img/.*$ - [L]

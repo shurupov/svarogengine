@@ -22,6 +22,15 @@
 				"editor" => "select_from_db",
 				"typelist" => "article",
 			),
+			"p3" => array(
+				"name" => "p3",
+				"title" => "Включить captcha",
+				"editor" => "select_from_consts",
+				"variants" => array(
+					0 => "Нет",
+					1 => "Да"
+				)
+			),
 		)
 	);
 ?>

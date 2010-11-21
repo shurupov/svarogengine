@@ -9,6 +9,8 @@
 	require $engine_root."/core/postprocessingfn.php";
 	require $engine_root."/core/renderer.php";
 	
+	session_start();
+	
 	//Создание объекта работы с базой данных
 	SQLExecuter::init($db_host,$db_user,$db_pass,$db_base);
 	

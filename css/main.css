@@ -23,8 +23,16 @@ form input[type=text], textarea {
 	color: #373737;
 	width: 100%;
 }
-textarea {
+form span.nesessary {
+	color: #ff0000;
+}
+form textarea {
 	height: 100px;
+}
+form div.error {
+	border: 1px #ff0000 solid;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 h2 {
 	color: #1d650e;
