@@ -104,16 +104,16 @@
 							SET
 								`title`="'.addslashes($_POST['question'][$key]).'",
 								`fieldtype_alias`="'.$_POST['question_type'][$key].'",
-								`order`="'.$_POST['order'][$key].'"
+								`sort`="'.$_POST['sort'][$key].'"
 							WHERE
 								`id`="'.$key.'"
 						');
 					} elseif ($question!='') {
 						$sql_executer->query('
 							INSERT INTO `sc_onpo_field`
-							(`title`,`fieldtype_alias`,`request_id`,`order`)
+							(`title`,`fieldtype_alias`,`request_id`,`sort`)
 							VALUES
-							("'.$_POST['question'][$key].'","'.$_POST['question_type'][$key].'","'.$id.'","'.$_POST['order'][$key].'")
+							("'.$_POST['question'][$key].'","'.$_POST['question_type'][$key].'","'.$id.'","'.$_POST['sort'][$key].'")
 						');
 						$new_id = $sql_executer->get_last_insert_id();
 					}
@@ -166,7 +166,7 @@
 				FROM `sc_onpo_field`
 				WHERE
 					`request_id`="'.$id.'"
-				ORDER BY `order`
+				ORDER BY `sort`
 			');
 			
 			$result['questions'] = $sql_executer->get_array();
@@ -234,7 +234,7 @@
 					SELECT *
 					FROM `sc_onpo_field`
 					WHERE `request_id`="'.$id.'"
-					ORDER BY `order` asc
+					ORDER BY `sort` asc
 				');
 				
 				$questions = $sql_executer->get_array();
@@ -309,7 +309,7 @@
 					SELECT *
 					FROM `sc_onpo_field`
 					WHERE `request_id`="'.$id.'"
-					ORDER BY `order` asc
+					ORDER BY `sort` asc
 				');
 			
 				$questions = $sql_executer->get_array();

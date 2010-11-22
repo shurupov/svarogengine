@@ -13,8 +13,9 @@
 			),
 			"p1" => array(
 				"name" => "p1",
-				"title" => "Номер формы",
-				"editor" => "input_text",
+				"title" => "Форма онлайн-заявки",
+				"editor" => "select_from_db",
+				"typelist" => "form",
 			),
 			"p2" => array(
 				"name" => "p2",

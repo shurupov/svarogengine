@@ -10,7 +10,7 @@
 		SELECT *
 		FROM `sc_onpo_field`
 		WHERE `request_id`="'.$id.'"
-		ORDER BY `order` asc
+		ORDER BY `sort` asc
 	');
 	
 	$questions = SQLExecuter::get_array();
