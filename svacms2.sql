@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 22 2010 г., 01:03
+-- Время создания: Ноя 22 2010 г., 23:48
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -270,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_field` (
   `fieldtype_alias` varchar(20) NOT NULL,
   `request_id` int(11) NOT NULL,
   `nesessary` int(1) NOT NULL,
-  `order` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
@@ -278,7 +278,7 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_field` (
 -- Дамп данных таблицы `sc_onpo_field`
 --
 
-INSERT INTO `sc_onpo_field` (`id`, `title`, `fieldtype_alias`, `request_id`, `nesessary`, `order`) VALUES
+INSERT INTO `sc_onpo_field` (`id`, `title`, `fieldtype_alias`, `request_id`, `nesessary`, `sort`) VALUES
 (26, 'Ваша компания', 'text', 1, 0, 30),
 (21, 'Ваше имя', 'text', 1, 1, 10),
 (25, 'Адрес электронной почты', 'text', 1, 1, 20),
@@ -391,6 +391,7 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_request` (
   `email_from` varchar(255) NOT NULL,
   `request` tinytext NOT NULL,
   `class_field` varchar(255) NOT NULL,
+  `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
@@ -399,8 +400,8 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_request` (
 -- Дамп данных таблицы `sc_onpo_request`
 --
 
-INSERT INTO `sc_onpo_request` (`id`, `title`, `email_to`, `email_from`, `request`, `class_field`) VALUES
-(1, 'Сделать заявку', 'bolteg86@ya.ru', 'ee@ee.ee', '', 'onlinepost');
+INSERT INTO `sc_onpo_request` (`id`, `title`, `email_to`, `email_from`, `request`, `class_field`, `sort`) VALUES
+(1, 'Сделать заявку', 'bolteg86@ya.ru', 'ee@ee.ee', '', 'onlinepost', 0);
 
 -- --------------------------------------------------------
 
@@ -417,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_sended` (
   `body` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Дамп данных таблицы `sc_onpo_sended`
@@ -454,7 +455,8 @@ INSERT INTO `sc_onpo_sended` (`id`, `request_id`, `email_to`, `email_from`, `tim
 (28, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290375953, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>fdfdg</td></tr><tr><td>Адрес электронной почты</td><td></td></tr><tr><td>Ваша компания</td><td></td></tr><tr><td>Ваш вопрос</td><td></td></tr></table>'),
 (29, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376053, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr></table>'),
 (30, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376350, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Адрес электронной почты</td><td>evg.bolt@bk.ru</td></tr><tr><td>Ваша компания</td><td></td></tr><tr><td>Ваш вопрос</td><td>Озвучьте мне видео, пожалуйста...</td></tr></table>'),
-(31, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376438, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Адрес электронной почты</td><td>evg.bolt@bk.ru</td></tr><tr><td>Ваша компания</td><td>Компания</td></tr><tr><td>Ваш вопрос</td><td>А?</td></tr></table>');
+(31, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290376438, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Адрес электронной почты</td><td>evg.bolt@bk.ru</td></tr><tr><td>Ваша компания</td><td>Компания</td></tr><tr><td>Ваш вопрос</td><td>А?</td></tr></table>'),
+(32, 1, 'bolteg86@ya.ru', 'ee@ee.ee', 1290458453, 'Форма онлайн отправки<br><table><tr><td colspan=2 align=center>Сделать заявку</td></tr><tr><td colspan=2 align=center></td></tr><tr><td>Ваше имя</td><td>Евгений</td></tr><tr><td>Адрес электронной почты</td><td>evg.bolt@bk.ru</td></tr><tr><td>Ваша компания</td><td>Компания</td></tr><tr><td>Ваш вопрос</td><td>Вопрос</td></tr></table>');
 
 -- --------------------------------------------------------
 
@@ -513,7 +515,7 @@ CREATE TABLE IF NOT EXISTS `sc_partition` (
 --
 
 INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `title`, `linktitle`, `alias`, `fullalias`, `blocklist_id`, `comptype_alias`, `depth`, `template_alias`, `comptpl_alias`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `sort`) VALUES
-(118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '0', '', '', '', '', '', 0),
+(118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '1', '', '', '', '', '', 0),
 (116, 1, 0, 1, '', 'Видео-ролики', 'Видео-ролики', 'video', 'video', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
 (117, 1, 0, 1, '', 'Цены', 'Цены', 'prices', 'prices', 12, 'article.article', 0, 'main', 'a_f_article', '68', '', '', '', '', '', '', '', 0),
 (113, 1, 0, 0, '', 'Главная', 'Главная', 'main', 'main', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
