@@ -33,8 +33,15 @@
 		"dataedit" => array(
 			"icon" => "/img/admin/field.png",
 			"name" => "Вопросы анкеты",
-			"subelement_types" => null,
-			"mainsubelement_type" => null,
+			"subelement_types" => array(
+				"variant" => array(
+					"type_alias" => "variant",
+					"link_field" => "field_id",
+					"in_sublist" => true, //В подсписке слева
+					"in_buttons" => true //Иконка с подэлементами справа от элемента, при нажатии открывается список справа*/
+				),
+			),
+			"mainsubelement_type" => "variant",
 			"in_root" => false, //Отображать в корне дерева
 			"list_settings" => array(
 				"viewer" => "simplelist",

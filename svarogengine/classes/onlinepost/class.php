@@ -133,7 +133,7 @@
 					foreach ($variants as $value) {
 						$sql_executer->query('
 							INSERT INTO `sc_onpo_multifield_value`
-							(`field_id`,`value`)
+							(`field_id`,`title`)
 							VALUES
 							("'.$k.'","'.addslashes($value).'")
 						');

@@ -193,7 +193,12 @@
 				$fields_line .= ', `'.$field["name"].'`';
 			}
 			
-			$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'` WHERE `'.$parent_field.'`="'.$value.'"';
+			if ($parent_field) {
+				$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'` WHERE `'.$parent_field.'`="'.$value.'"';
+			} else {
+				$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'`';
+			}
+			
 			
 			SQLExecuter::query($query);
 			$data = SQLExecuter::get_array();

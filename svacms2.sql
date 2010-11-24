@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 22 2010 г., 23:48
+-- Время создания: Ноя 25 2010 г., 01:22
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -272,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `sc_onpo_field` (
   `nesessary` int(1) NOT NULL,
   `sort` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
 -- Дамп данных таблицы `sc_onpo_field`
@@ -318,65 +318,17 @@ INSERT INTO `sc_onpo_fieldtype` (`id`, `title`, `alias`) VALUES
 CREATE TABLE IF NOT EXISTS `sc_onpo_multifield_value` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `field_id` int(11) NOT NULL,
-  `value` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `sort` int(11) NOT NULL,
   UNIQUE KEY `id` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=531 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `sc_onpo_multifield_value`
 --
 
-INSERT INTO `sc_onpo_multifield_value` (`id`, `field_id`, `value`) VALUES
-(350, 17, 'павпв'),
-(334, 12, '8585858'),
-(333, 12, '123456789'),
-(338, 13, '65755756'),
-(337, 13, '567565756'),
-(349, 17, '432423'),
-(348, 17, 'уцйуц'),
-(340, 5, '3333333333333'),
-(339, 5, '444444444'),
-(346, 15, 'пвапва'),
-(345, 15, 'павппав'),
-(344, 15, 'павппав'),
-(343, 14, '8989898'),
-(347, 17, 'екеке'),
-(342, 14, '787878787'),
-(341, 14, '565656565'),
-(335, 12, 'ответ'),
-(336, 12, 'ответ2'),
-(377, 20, 'третий вариант'),
-(376, 20, 'первый вариант ответа'),
-(375, 20, 'второй вариант'),
-(530, 0, ''),
-(529, 0, ''),
-(528, 0, ''),
-(527, 0, ''),
-(526, 0, ''),
-(513, 21, ''),
-(512, 21, ''),
-(511, 21, ''),
-(510, 21, ''),
-(509, 21, ''),
-(508, 21, ''),
-(519, 22, ''),
-(518, 22, ''),
-(517, 22, ''),
-(516, 22, ''),
-(515, 22, ''),
-(514, 22, ''),
-(496, 23, ''),
-(495, 23, ''),
-(494, 23, ''),
-(493, 23, ''),
-(492, 23, ''),
-(491, 23, ''),
-(525, 24, ''),
-(524, 24, ''),
-(523, 24, ''),
-(522, 24, ''),
-(521, 24, ''),
-(520, 24, '');
+INSERT INTO `sc_onpo_multifield_value` (`id`, `field_id`, `title`, `sort`) VALUES
+(1, 21, 'Пробный вариант', 10);
 
 -- --------------------------------------------------------
 
