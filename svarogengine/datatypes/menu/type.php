@@ -23,6 +23,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "menu",
 			"icon" => "/img/admin/menu.png",
 			"name" => "Меню",
 			"subelement_types" => array(

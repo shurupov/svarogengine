@@ -125,18 +125,14 @@
 				
 			}
 			
-			if (!$fields[$parent_field]) {
-				$fields_line .= '`'.$parent_field.'`';
-				$values_line .= '"'.addslashes($value).'"';
-			} else {
-				$fields_line = substr($fields_line,0,-1);
-				$values_line = substr($values_line,0,-1);
-			}
+			$fields_line = substr($fields_line,0,-1);
+			$values_line = substr($values_line,0,-1);
+
 			
 			$query = 'INSERT INTO `'.$table.'` ('.$fields_line.') VALUES ('.$values_line.')';
 			
 			SQLExecuter::query($query);
-			//exit;
+			//die;
 			
 			$id = SQLExecuter::get_last_insert_id();
 			

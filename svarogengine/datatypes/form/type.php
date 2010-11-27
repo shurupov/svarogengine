@@ -35,6 +35,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "webforms",
 			"icon" => "/img/admin/form.png",
 			"name" => "Онлайн-заявка",
 			"subelement_types" => array(

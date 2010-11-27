@@ -124,7 +124,8 @@
 			
 			$sub_isset = count($datatypes[$element['type']]['dataedit']['subelement_types']);
 			
-			if ($sub_isset) {
+			//if ($sub_isset) {
+			if (count($element['subelements'])) {	
 				if ($element['subelements'])
 					$text .='<div id="marker'.$element['id'].$element['type'].'" class="marker'.($last?'-last':'').' minus'.($last?'-last':'').'"></div>';
 				else
@@ -134,26 +135,37 @@
 			}
 			
 			$text .= '<div class="buttons">';
-			$text .= '<a href="?page=edit&type='.$element['type'].'&id='.$element['id'].'"><img src="/img/admin/edit.png" height="16" /></a>';
+			if ($element['type']!='tophost')
+				$text .= '<a href="?page=edit&type='.$element['type'].'&id='.$element['id'].'"><img src="/img/admin/edit.png" height="16" /></a>';
+			
 			if ($datatypes[$element['type']]['dataedit']['subelement_types']) {
 				
-				 foreach ($datatypes[$element['type']]['dataedit']['subelement_types'] as $subelement_type) {
+				foreach ($datatypes[$element['type']]['dataedit']['subelement_types'] as $subelement_type) {
 					$text .= '<a href="./?page=list&type='.$subelement_type['type_alias'].'&field='.$subelement_type['link_field'].'&value='.$element['id'].'">';
 					$text .= '<img height=16 src="'.$datatypes[$subelement_type['type_alias']]['dataedit']['icon'].'" />';
 					$text .= '</a>';
 				}
 				
+			} elseif ($element['type']=='tophost') {
+				$text .= '<a href="./?page=list&type='.$element['subtype'].'">';
+				$text .= '<img height=16 src="'.$datatypes[$element['subtype']]['dataedit']['icon'].'" />';
+				$text .= '</a>';
 			}
+			
+			
 			$text .= '</div>';
 			
-			$text .= '<div class="text" style="background-image: url('.$datatypes[$element['type']]['dataedit']['icon'].');">'.$element['title'];
-
-			$text .= '</div>';
+			if ($element['type']=='tophost'){
+				$text .= '<div class="text" style="background-image: url(/img/admin/datatype.png);">'.$element['title'].'</div>';
+			} else {
+				$text .= '<div class="text" style="background-image: url('.$datatypes[$element['type']]['dataedit']['icon'].');">'.$element['title'].'</div>';
+			}
 			
 			
 			
 			
-			if ($sub_isset) {
+			//if ($sub_isset) {
+			if (count($element['subelements'])) {	
 				$text .= '<div id="subelements'.$element['id'].$element['type'].'" class="subelements">';
 				$text .= Datatypes::echo_subelements($element['subelements']);
 				$text .= '</div>';

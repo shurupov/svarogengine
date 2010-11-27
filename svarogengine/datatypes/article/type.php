@@ -39,6 +39,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "articles",
 			"icon" => "/img/admin/article_text.png",
 			"name" => "Статьи",
 			"subelement_types" => null,

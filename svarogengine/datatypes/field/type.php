@@ -31,6 +31,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "webforms",
 			"icon" => "/img/admin/field.png",
 			"name" => "Вопросы анкеты",
 			"subelement_types" => array(

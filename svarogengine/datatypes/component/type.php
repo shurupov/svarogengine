@@ -79,6 +79,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "menu",
 			"icon" => "/img/admin/component.png",
 			"name" => "Компонент",
 			"subelement_types" => null,

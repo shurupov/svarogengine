@@ -99,6 +99,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "menu",
 			"icon" => "/img/admin/page.png",
 			"name" => "Страницы",
 			"subelement_types" => array(

@@ -23,6 +23,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "webforms",
 			"icon" => "/img/admin/variant.png",
 			"name" => "Вариант ответа",
 			"subelement_types" => null,

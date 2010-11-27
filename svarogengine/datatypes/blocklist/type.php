@@ -23,6 +23,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "menu",
 			"icon" => "/img/admin/blocklist.png",
 			"name" => "Набор блоков",
 			"subelement_types" => array(

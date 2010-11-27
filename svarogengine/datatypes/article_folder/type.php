@@ -24,6 +24,7 @@
 			)
 		),
 		"dataedit" => array(
+			"group" => "articles",
 			"icon" => "/img/admin/folder_article.png",
 			"name" => "Группы статей",
 			"subelement_types" => array(

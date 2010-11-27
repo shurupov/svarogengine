@@ -5,7 +5,8 @@
 		echo "<p>Класс datatype отсутствует в системе</p>";
 	} else {
 		Datatypes::get_datatypes();
-		
+	
+	require $engine_root."/datatypes/config.php";
 ?>
 <script src="/js/admin/dataedit.js" type="text/javascript"></script> 
 <link rel="stylesheet" type="text/css" href="./css/tree.css"> 
@@ -15,19 +16,50 @@
 		<?
 			global $datatypes;
 			
-			foreach ($datatypes as $alias=>$type) {
+			$k = 0;
+			
+			foreach ($datatypegroups as $group) {
 				
-				if ($type["dataedit"]["in_root"]) {
-					echo "<div class=\"tree_container\">";
-					echo "<h1>".$type["dataedit"]["name"]."</h1>";
-					if ($type["dataedit"]["subelement_types"][$alias]) {
-						echo Datatypes::echo_subelements(Datatypes::get_subelements($alias,0,true));
-					} else {
-						echo Datatypes::echo_subelements(Datatypes::get_r_elements($alias,true));
+				echo "<div class=\"tree_container\">";
+				echo "<h1>".$group["name"]."</h1>";				
+				
+				$elements = array();
+				
+				foreach ($datatypes as $alias=>$type) {
+					
+					$k++;
+					
+					if (($type["dataedit"]["in_root"])&&($type["dataedit"]["group"]==$group["alias"])) {
+
+						if ($type["dataedit"]["subelement_types"][$alias]) {
+							$elements[] = array(
+									"id" => $k,
+									"title" => $type["dataedit"]["name"],
+									"type" => "tophost",
+									"subtype" => $alias,
+									"subelements" => Datatypes::get_subelements($alias,0,true)
+							);						
+							//echo Datatypes::echo_subelements($elements);
+						} else {
+							$elements[] = array(
+									"id" => $k,
+									"title" => $type["dataedit"]["name"],
+									"type" => "tophost",
+									"subtype" => $alias,
+									"subelements" => Datatypes::get_r_elements($alias,true)
+							);
+							
+						}
+						
 					}
-					echo "</div>";
 				}
+				
+				echo Datatypes::echo_subelements($elements);
+				
+				echo "</div>";
+				
 			}
+			
 		?>
 		</td>
 		<td style="border: 3px gray solid;">
