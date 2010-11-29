@@ -12,6 +12,10 @@
 			"name" => "Веб-формы",
 			"alias" => "webforms"
 		),
+		array(
+			"name" => "Медиа-данные",
+			"alias" => "media"
+		),
 		
 	);
 ?>

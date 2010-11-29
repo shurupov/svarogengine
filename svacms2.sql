@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 25 2010 г., 01:22
+-- Время создания: Ноя 29 2010 г., 08:15
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -184,6 +184,55 @@ INSERT INTO `sc_admin_usergroup_rights` (`id`, `usergroup_id`, `panel_alias`) VA
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `sc_af_audio`
+--
+
+CREATE TABLE IF NOT EXISTS `sc_af_audio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `folder_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `length` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `style` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `sort` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `sc_af_audio`
+--
+
+INSERT INTO `sc_af_audio` (`id`, `folder_id`, `title`, `length`, `size`, `style`, `price`, `file`, `sort`) VALUES
+(1, 1, 'Аудио-ролик 1', '2 минуты', '4 МБ', 'Рок', '3000 руб.', '/files/1.pm3', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `sc_af_folder`
+--
+
+CREATE TABLE IF NOT EXISTS `sc_af_folder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `alias` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `sort` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `sc_af_folder`
+--
+
+INSERT INTO `sc_af_folder` (`id`, `parent_id`, `alias`, `title`, `sort`) VALUES
+(1, 0, 'audio', 'Аудио-ролики', 0),
+(2, 0, 'minuses', 'Минусовки', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `sc_block`
 --
 
@@ -249,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `sc_menu` (
   `title` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `sc_menu`
@@ -514,7 +563,7 @@ CREATE TABLE IF NOT EXISTS `sc_sa_theme` (
   `title` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `sc_sa_theme`
@@ -523,3 +572,52 @@ CREATE TABLE IF NOT EXISTS `sc_sa_theme` (
 INSERT INTO `sc_sa_theme` (`id`, `parent_id`, `alias`, `title`, `sort`) VALUES
 (1, 0, 'texts', 'Тексты разделов', 0),
 (2, 0, '', 'ещё тексты', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `sc_vf_folder`
+--
+
+CREATE TABLE IF NOT EXISTS `sc_vf_folder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `alias` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `sort` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `sc_vf_folder`
+--
+
+INSERT INTO `sc_vf_folder` (`id`, `parent_id`, `alias`, `title`, `sort`) VALUES
+(1, 0, 'video', 'Видео-ролики', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `sc_vf_video`
+--
+
+CREATE TABLE IF NOT EXISTS `sc_vf_video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `folder_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `thumb` varchar(255) NOT NULL,
+  `length` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `style` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `sort` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `sc_vf_video`
+--
+
+INSERT INTO `sc_vf_video` (`id`, `folder_id`, `title`, `thumb`, `length`, `size`, `style`, `price`, `file`, `sort`) VALUES
+(1, 1, 'Видео', 'ипвапв', 'пвап', 'пвап', 'пвап', 'пвапав', 'павпвап', 0);
