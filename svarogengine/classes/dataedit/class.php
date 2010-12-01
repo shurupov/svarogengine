@@ -291,6 +291,16 @@
 				include $engine_root.'/datatypes/'.$datatype.'/aftersave.php';
 			}
 			
+			$table = Datatypes::get_datatype_table($datatype);
+			$editfields = Datatypes::get_dataedit_fields($datatype);
+			
+			foreach ($editfields as $properties) {
+				if (file_exists($engine_root.'/dataeditors/'.$properties['editor'].'/after_save.php')) {
+					//Тут нужно сохранить файл или изменить поле
+					include $engine_root.'/dataeditors/'.$properties['editor'].'/after_save.php';
+				}
+			}
+			
 		}
 		
 		public static function aftersave_editor_obtain($datatype,$field,$properties,&$data,$element_id) {

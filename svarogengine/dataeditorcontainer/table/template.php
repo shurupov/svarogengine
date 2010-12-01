@@ -3,7 +3,7 @@
 		
 		<b><?=$data['data_title']?></b><br/><br/>
 		
-		<form action="?page=edit&type=<?=$data['type']?>&id=<?=$data['id']?>&action=<?=$data['action_type']?>" method=post id="editelementform">
+		<form action="?page=edit&type=<?=$data['type']?>&id=<?=$data['id']?>&action=<?=$data['action_type']?>" method=post enctype="multipart/form-data" id="editelementform">
 		<table>
 			<? foreach ($data['fields'] as $field) { ?>
 				<tr>

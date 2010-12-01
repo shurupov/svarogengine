@@ -93,7 +93,11 @@
 				"file" => array(
 					"name" => "file",
 					"title" => "Файл",
-					"editor" => "input_text"
+					"editor" => "input_file",
+					"file_alias" => "audio",
+					"file_extension" => ".mp3",
+					"folder_path" => "/files/media/audio/",
+					
 				),
 				"sort" => array(
 					"name" => "sort",

@@ -1,5 +1,5 @@
 <?
-	
+	ini_set('upload_max_filesize','100M');
 	//Вычисление времени начала работы скрипта
 	$begin_time = microtime(true);
 	
@@ -8,6 +8,8 @@
 	require $engine_root."/core/helperlist.php";
 	require $engine_root."/core/postprocessingfn.php";
 	require $engine_root."/core/renderer.php";
+	
+	
 	
 	$renderer = new Renderer(null,null);
 	

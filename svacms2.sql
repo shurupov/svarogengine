@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 29 2010 г., 08:15
+-- Время создания: Дек 02 2010 г., 00:49
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -198,14 +198,15 @@ CREATE TABLE IF NOT EXISTS `sc_af_audio` (
   `file` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Дамп данных таблицы `sc_af_audio`
 --
 
 INSERT INTO `sc_af_audio` (`id`, `folder_id`, `title`, `length`, `size`, `style`, `price`, `file`, `sort`) VALUES
-(1, 1, 'Аудио-ролик 1', '2 минуты', '4 МБ', 'Рок', '3000 руб.', '/files/1.pm3', 10);
+(1, 1, 'Аудио-ролик 1', '2 минуты', '4 МБ', 'Рок', '3000 руб.', '/files/media/audio/audio1.mp3', 10),
+(13, 1, 'fdsfs', 'fsdf', 'fdsfs', 'fdsf', 'fdsfs', '', 20);
 
 -- --------------------------------------------------------
 
