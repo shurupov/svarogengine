@@ -69,6 +69,11 @@
 					"title" => "Внутреннее название",
 					"editor" => "input_text"
 				),
+				"description" => array(
+					"name" => "description",
+					"title" => "Описание",
+					"editor" => "fckeditor"
+				),
 			)
 		)
 	);

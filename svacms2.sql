@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 02 2010 г., 00:49
+-- Время создания: Дек 10 2010 г., 02:51
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `sc_af_audio` (
   `file` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Дамп данных таблицы `sc_af_audio`
@@ -206,7 +206,8 @@ CREATE TABLE IF NOT EXISTS `sc_af_audio` (
 
 INSERT INTO `sc_af_audio` (`id`, `folder_id`, `title`, `length`, `size`, `style`, `price`, `file`, `sort`) VALUES
 (1, 1, 'Аудио-ролик 1', '2 минуты', '4 МБ', 'Рок', '3000 руб.', '/files/media/audio/audio1.mp3', 10),
-(13, 1, 'fdsfs', 'fsdf', 'fdsfs', 'fdsf', 'fdsfs', '', 20);
+(13, 1, 'Перемен', 'fsdf', 'fdsfs', 'fdsf', 'fdsfs', '/files/media/audio/audio13.mp3', 20),
+(14, 1, 'Алкоголь', '', '', '', '', '/files/media/audio/audio14.mp3', 30);
 
 -- --------------------------------------------------------
 
@@ -219,6 +220,7 @@ CREATE TABLE IF NOT EXISTS `sc_af_folder` (
   `parent_id` int(11) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
@@ -227,9 +229,9 @@ CREATE TABLE IF NOT EXISTS `sc_af_folder` (
 -- Дамп данных таблицы `sc_af_folder`
 --
 
-INSERT INTO `sc_af_folder` (`id`, `parent_id`, `alias`, `title`, `sort`) VALUES
-(1, 0, 'audio', 'Аудио-ролики', 0),
-(2, 0, 'minuses', 'Минусовки', 0);
+INSERT INTO `sc_af_folder` (`id`, `parent_id`, `alias`, `title`, `description`, `sort`) VALUES
+(1, 0, 'audio', 'Аудио-ролики', '<p>&nbsp;Наш портал является крупнейшей библиотекой для on-line скачивания профессиональных фонограмм минус один. Под наши минусовки вы можете петь не только в кабаке. Качество наших фонограмм позволит вам выступать на самых престижных музыкальных конкурсах, концертах, праздниках и т.п. Ежедневное обновление библиотеки позволит вам скачивать самые свежие хиты.</p>\r\n<div>&bull; Огромный выбор самых свежих минусовок и текстов песен!&nbsp;</div>\r\n<div>&bull; Мы представляем только качественные минусовки!&nbsp;</div>\r\n<div>&bull; Расширенный поиск минусов, по различным критериям&nbsp;</div>\r\n<div>&bull; Гарантом качества является полная информация о файле минусовки и предоставление пользователю бесплатных MP3 демо нарезок каждого минуса, где место среза выбирает сам пользователь.&nbsp;</div>\r\n<div>&bull; Мгновенный доступ ко всем минусовкам.&nbsp;</div>\r\n<div>&bull; Скачать минусовку может даже не зарегистрированный пользователь.&nbsp;</div>\r\n<div>&bull; Свыше 30 методов оплаты.&nbsp;</div>\r\n<div>&bull; Архивный каталог минусовок в архиве ZIP</div>', 0),
+(2, 0, 'minuses', 'Минусовки', '', 0);
 
 -- --------------------------------------------------------
 
@@ -521,7 +523,7 @@ INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `tit
 (116, 1, 0, 1, '', 'Видео-ролики', 'Видео-ролики', 'video', 'video', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
 (117, 1, 0, 1, '', 'Цены', 'Цены', 'prices', 'prices', 12, 'article.article', 0, 'main', 'a_f_article', '68', '', '', '', '', '', '', '', 0),
 (113, 1, 0, 0, '', 'Главная', 'Главная', 'main', 'main', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
-(114, 1, 0, 1, '', 'Аудио-ролики', 'Аудио-ролики', 'audio', 'audio', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
+(114, 1, 0, 1, '', 'Аудио-ролики', 'Аудио-ролики', 'audio', 'audio', 12, 'music.list', 0, 'main', 'default', '1', 'id', 'desc', '', '', '', '', '', 0),
 (115, 1, 0, 1, '', 'Минусовки', 'Минусовки', 'minuses', 'minuses', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0);
 
 -- --------------------------------------------------------

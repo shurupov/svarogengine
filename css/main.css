@@ -74,8 +74,28 @@ div.main_content div.article table tr td {
 	border-bottom: 1px #c9c9c9 solid;
 	border-right: 1px #c9c9c9 solid;
 }
+div.main_content div.article table tr td.button {
+	width: 15px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+div.main_content div.article table tr td.play {
+	background-image: url(/img/playlist/playbutton.png);
+	_background-image: url(/img/playlist/playbutton.gif);
+	cursor: pointer;
+}
+div.main_content div.article table tr td.save {
+	background-image: url(/img/playlist/savebutton.png);
+	_background-image: url(/img/playlist/savebutton.gif);
+}
+div.main_content div.article table tr td.save a {
+	text-decoration: none;
+}
 div.main_content div.article table tr.second td {
 	background-color: #e0ffe0;
+}
+div.main_content div.article table tr.selected td {
+	background-color: #a2ffa2;
 }
 div.content {
 	width: 998px;
