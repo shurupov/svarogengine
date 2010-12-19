@@ -182,6 +182,11 @@
 					"editor" => "select_from_db",
 					"typelist" => "blocklist",
 				),
+				"sort" => array(
+					"name" => "sort",
+					"title" => "Индекс сортировки",
+					"editor" => "input_text"
+				),
 				/*"menu_id" => array(
 					"name" => "menu_id",
 					"title" => "Меню",

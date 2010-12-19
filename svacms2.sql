@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 10 2010 г., 02:51
+-- Время создания: Дек 19 2010 г., 18:14
 -- Версия сервера: 5.1.41
 -- Версия PHP: 5.3.2-1ubuntu4.5
 
@@ -519,12 +519,12 @@ CREATE TABLE IF NOT EXISTS `sc_partition` (
 --
 
 INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `title`, `linktitle`, `alias`, `fullalias`, `blocklist_id`, `comptype_alias`, `depth`, `template_alias`, `comptpl_alias`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `sort`) VALUES
-(118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '1', '', '', '', '', '', 0),
-(116, 1, 0, 1, '', 'Видео-ролики', 'Видео-ролики', 'video', 'video', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
-(117, 1, 0, 1, '', 'Цены', 'Цены', 'prices', 'prices', 12, 'article.article', 0, 'main', 'a_f_article', '68', '', '', '', '', '', '', '', 0),
-(113, 1, 0, 0, '', 'Главная', 'Главная', 'main', 'main', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0),
-(114, 1, 0, 1, '', 'Аудио-ролики', 'Аудио-ролики', 'audio', 'audio', 12, 'music.list', 0, 'main', 'default', '1', 'id', 'desc', '', '', '', '', '', 0),
-(115, 1, 0, 1, '', 'Минусовки', 'Минусовки', 'minuses', 'minuses', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 0);
+(118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '1', '', '', '', '', '', 50),
+(116, 1, 0, 1, '', 'Видео-ролики', 'Видео-ролики', 'video', 'video', 12, 'video.list', 0, 'main', 'default', '1', 'id', 'asc', '0', '', '', '', '', 40),
+(117, 1, 0, 1, '', 'Цены', 'Цены', 'prices', 'prices', 12, 'article.article', 0, 'main', 'a_f_article', '68', '', '', '', '', '', '', '', 60),
+(113, 1, 0, 0, '', 'Главная', 'Главная', 'main', 'main', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 10),
+(114, 1, 0, 1, '', 'Аудио-ролики', 'Аудио-ролики', 'audio', 'audio', 12, 'music.list', 0, 'main', 'default', '1', 'id', 'desc', '0', '', '', '', '', 20),
+(115, 1, 0, 1, '', 'Минусовки', 'Минусовки', 'minuses', 'minuses', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 30);
 
 -- --------------------------------------------------------
 
@@ -613,14 +613,21 @@ CREATE TABLE IF NOT EXISTS `sc_vf_video` (
   `size` varchar(255) NOT NULL,
   `style` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
-  `file` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `sc_vf_video`
 --
 
-INSERT INTO `sc_vf_video` (`id`, `folder_id`, `title`, `thumb`, `length`, `size`, `style`, `price`, `file`, `sort`) VALUES
-(1, 1, 'Видео', 'ипвапв', 'пвап', 'пвап', 'пвап', 'пвапав', 'павпвап', 0);
+INSERT INTO `sc_vf_video` (`id`, `folder_id`, `title`, `thumb`, `length`, `size`, `style`, `price`, `code`, `sort`) VALUES
+(1, 1, 'Путин поёт', 'ипвапв', 'пвап', 'пвап', 'пвап', 'пвапав', 'IV4IjHz2yIo', 10),
+(2, 1, 'Детские отмазки', '', '', '', '', '', 'eXOGlYrlb3w', 20),
+(3, 1, 'Николай I', '', '', '', '', '', 'BU2mF-qUN6w', 30),
+(4, 1, 'Иван IV Грозный', '', '', '', '', '', 'Z-7j2YKig_I', 40),
+(5, 1, 'Инка', '', '', '', '', '', 'W_oTsEcGZxk', 50),
+(6, 1, 'Дмитрий Донской', '', '', '', '', '', 'XVX7TX5FgwU', 60),
+(7, 1, 'Тамерлан', '', '', '', '', '', 'ENMNEJ2WVkQ', 70),
+(8, 1, 'Александр II', '', '', '', '', '', 'E08VRJGjglA', 80);

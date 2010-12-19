@@ -1,6 +1,6 @@
 <?
 	$properties = array(
-		"title" => "Список аудио",
+		"title" => "Список видео",
 		"description" => "Описание",
 		"only_simple" => false,
 		"only_main" => false,
@@ -9,13 +9,13 @@
 				"name" => "comptpl_alias",
 				"title" => "Шаблон компонента",
 				"editor" => "select_from_folders",
-				"path" => "/components/music.list/templates/",
+				"path" => "/components/video.list/templates/",
 			),
 			"p1" => array(
 				"name" => "p1",
-				"title" => "Группа аудио",
+				"title" => "Группа видео",
 				"editor" => "select_from_db",
-				"typelist" => "audio_folder",
+				"typelist" => "video_folder",
 			),
 			"p2" => array(
 				"name" => "p2",
@@ -41,7 +41,7 @@
 			),
 			"p4" => array(
 				"name" => "p4",
-				"title" => "Можно скачать mp3-файл",
+				"title" => "Можно скачать video-файл",
 				"editor" => "select_from_consts",
 				"variants" => array(
 					"0" => "Нет",

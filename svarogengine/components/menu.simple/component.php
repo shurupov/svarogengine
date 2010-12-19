@@ -24,7 +24,7 @@
 			`parent_id`="'.$parent_partition_id.'"
 			AND
 			`visible`="1"
-		ORDER BY `id`
+		ORDER BY `sort` ASC
 	');
 	$menu = SQLExecuter::get_array();
 	

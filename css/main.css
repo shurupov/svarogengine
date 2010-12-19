@@ -84,6 +84,11 @@ div.main_content div.article table tr td.play {
 	_background-image: url(/img/playlist/playbutton.gif);
 	cursor: pointer;
 }
+div.main_content div.article table tr td.pause {
+	background-image: url(/img/playlist/pausebutton.png);
+	_background-image: url(/img/playlist/pausebutton.gif);
+	cursor: pointer;
+}
 div.main_content div.article table tr td.save {
 	background-image: url(/img/playlist/savebutton.png);
 	_background-image: url(/img/playlist/savebutton.gif);

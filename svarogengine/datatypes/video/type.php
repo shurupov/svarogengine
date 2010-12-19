@@ -99,9 +99,9 @@
 					"title" => "Цена",
 					"editor" => "input_text"
 				),
-				"file" => array(
-					"name" => "file",
-					"title" => "Файл",
+				"code" => array(
+					"name" => "code",
+					"title" => "Код ролика с youtube",
 					"editor" => "input_text"
 				),
 				"sort" => array(

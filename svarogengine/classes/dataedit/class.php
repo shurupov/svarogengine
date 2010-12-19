@@ -190,9 +190,9 @@
 			}
 			
 			if ($parent_field) {
-				$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'` WHERE `'.$parent_field.'`="'.$value.'"';
+				$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'` WHERE `'.$parent_field.'`="'.$value.'" ORDER BY `sort`';
 			} else {
-				$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'`';
+				$query = 'SELECT '.$fields_line.' FROM `'.$table_name.'` ORDER BY `sort`';
 			}
 			
 			

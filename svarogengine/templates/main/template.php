@@ -21,7 +21,6 @@
 					<!--[if lte IE 6]>
 					<a href="/"><img style="width: 177px; height: 159px;" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/logo.png', sizingMethod='scale');" src="/img/ie.gif" /></a>
 					<![endif]-->
-
 				</div>
 				<div class="right_contacts">
 					<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">030-01-23</span>
