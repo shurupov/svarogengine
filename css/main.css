@@ -109,6 +109,52 @@ div.content {
 div.header {
 	height: 174px;
 }
+div.recorder {
+	height: 1145px;
+	background-position: center 113px;
+	background-repeat: no-repeat;
+	background-image: url(/img/mainback3.png);
+}
+div.recorder h1 {
+	color: #147800;
+	font-family: Arial;
+	font-size: 22px;
+	font-weight: normal;
+	text-align: center;
+}
+div.recorder div.indexnews {
+	width: 215px;
+	float: left;
+}
+div.recorder div.indexnews div.date {
+	color: #960000;
+	font-family: Arial;
+	font-size: 14px;
+}
+div.recorder div.indexnews div.text {
+	color: #272727;
+	font-family: Arial;
+	font-size: 13px;
+	line-height: 1.1em;
+	margin-bottom: 15px;
+}
+div.recorder div.indexnews div.text a {
+	color: #1e640f;
+	font-family: inherit;
+	font-size: inherit;
+}
+div.recorder div.indexlinks {
+	margin-top: 400px;
+}
+div.recorder div.indexlinks div.link {
+	text-align: center;
+	float: left;
+}
+div.recorder div.indexlinks div.link a {
+	color: #1d650e;
+	font-family: Arial;
+	font-size: 20px;
+}
 div.header div.right_contacts {
 	float: right;
 	padding-top: 35px;

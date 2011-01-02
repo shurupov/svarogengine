@@ -74,7 +74,7 @@
 					"editor" => "select_from_db",
 					"typelist" => "video_folder",
 				),
-				"thumb" => array(
+				/*"thumb" => array(
 					"name" => "thumb",
 					"title" => "Название",
 					"editor" => "input_text"
@@ -98,7 +98,7 @@
 					"name" => "price",
 					"title" => "Цена",
 					"editor" => "input_text"
-				),
+				),*/
 				"code" => array(
 					"name" => "code",
 					"title" => "Код ролика с youtube",
