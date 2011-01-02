@@ -1,7 +1,7 @@
 <?
 	
 	$document_replace = array();
-	$document_replace["TITLE"] = 'oo';
+	$document_replace["TITLE"] = '';
 	$document_replace["HEAD_DATA"] = ' ';	
 	
 	function replace_document_aliases($html) {
