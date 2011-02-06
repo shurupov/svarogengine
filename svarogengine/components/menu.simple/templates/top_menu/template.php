@@ -23,9 +23,9 @@
 	<?
 	foreach($params['menu'] as $item) {
 		if ($item['id']==$params['current']) {
-			echo '<div class="selected"><div class="menuitemleft"><div class="menuitemright"><div class="center"><span>'.$item['linktitle'].'</span></div></div></div></div>';
+			echo '<div class="selected"><div class="menuitemleft"><div class="menuitemright"><div class="center"><span>'.$item['title'].'</span></div></div></div></div>';
 		} else {
-			echo '<div class="menuitemleft"><div class="menuitemright"><div class="center"><a href="/'.$item['fullalias'].'">'.$item['linktitle'].'</a></div></div></div>';
+			echo '<div class="menuitemleft"><div class="menuitemright"><div class="center"><a href="/'.$item['fullalias'].'">'.$item['title'].'</a></div></div></div>';
 		}
 	}
 ?>

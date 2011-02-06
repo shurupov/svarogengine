@@ -12,6 +12,8 @@
 			$this->partition_params = $partition_params;
 			$this->page_params = $page_params;
 			
+			$this->set_title($partition_params['htmltitle']);
+			
 		}
 		
 		private function render_component($component) {

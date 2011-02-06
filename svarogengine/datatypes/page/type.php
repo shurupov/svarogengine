@@ -28,8 +28,8 @@
 					"name" => "title",
 					"type" => "varchar(255)",
 				),
-				"linktitle" => array(
-					"name" => "linktitle",
+				"htmltitle" => array(
+					"name" => "htmltitle",
 					"type" => "varchar(255)",
 				),
 				"alias" => array(
@@ -138,9 +138,9 @@
 					"title" => "Название раздела",
 					"editor" => "input_text"
 				),
-				"linktitle" => array(
-					"name" => "linktitle",
-					"title" => "Подпись ссылки на раздел",
+				"htmltitle" => array(
+					"name" => "htmltitle",
+					"title" => "Title раздела",
 					"editor" => "input_text"
 				),
 				"url" => array(

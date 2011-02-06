@@ -157,8 +157,9 @@ div.recorder div.indexlinks div.link a {
 }
 div.header div.right_contacts {
 	float: right;
-	padding-top: 35px;
+	padding-top: 25px;
 	text-align: right;
+	line-height: 40px;
 }
 div.header div.right_contacts span.seven {
 	font-family: Arial;
@@ -177,7 +178,7 @@ div.header div.right_contacts span.phone {
 }
 div.header div.right_contacts a.email {
 	font-family: Arial;
-	font-size: 22px;
+	font-size: 28px;
 	color: #960000;
 	text-decoration: none;
 	line-height: 30px;

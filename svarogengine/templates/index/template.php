@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Система управления контентом Сварог ###TITLE###</title>
+	<title>###TITLE###</title>
 
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -23,9 +23,11 @@
 					<![endif]-->
 				</div>
 				<div class="right_contacts">
-					<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">030-01-23</span>
+					<span class="seven">+7</span> <span class="city_code">(499)</span> <span class="phone">34-35-123</span>
 					<br/>
-					<a class="email" href="mailto:elfoff@hotmail.com">elfoff@hotmail.com</a>
+					<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">03-00-123</span>
+					<br/>
+					<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
 				</div>
 				<div style="clear: both; height: 850px; padding-top: 150px;">
 					
@@ -64,7 +66,7 @@
 				<?php $renderer->render_block('text'); ?>
 			</div>
 			<div class="footer">
-				&laquo;Аудиокузница&raquo;, 2010 &copy;
+				elfoff.net, 2010 &copy;
 			</div>
 		</div>
 	</div>

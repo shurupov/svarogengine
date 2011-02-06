@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Янв 02 2011 г., 16:07
+-- Время создания: Фев 06 2011 г., 02:59
 -- Версия сервера: 5.1.41
--- Версия PHP: 5.3.2-1ubuntu4.5
+-- Версия PHP: 5.3.2-1ubuntu4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -521,7 +521,7 @@ CREATE TABLE IF NOT EXISTS `sc_partition` (
   `visible` int(1) NOT NULL,
   `url` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `linktitle` varchar(255) NOT NULL,
+  `htmltitle` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `fullalias` varchar(255) NOT NULL,
   `blocklist_id` int(11) NOT NULL,
@@ -545,11 +545,11 @@ CREATE TABLE IF NOT EXISTS `sc_partition` (
 -- Дамп данных таблицы `sc_partition`
 --
 
-INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `title`, `linktitle`, `alias`, `fullalias`, `blocklist_id`, `comptype_alias`, `depth`, `template_alias`, `comptpl_alias`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `sort`) VALUES
+INSERT INTO `sc_partition` (`id`, `menu_id`, `parent_id`, `visible`, `url`, `title`, `htmltitle`, `alias`, `fullalias`, `blocklist_id`, `comptype_alias`, `depth`, `template_alias`, `comptpl_alias`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `sort`) VALUES
 (118, 1, 0, 1, '', 'Контакты', 'Контакты', 'contacts', 'contacts', 12, 'onlinepost.onlinepost', 0, 'main', 'form', '1', '69', '1', '', '', '', '', '', 50),
 (116, 1, 0, 1, '', 'Видео-ролики', 'Видео-ролики', 'video', 'video', 12, 'video.list', 0, 'main', 'default', '1', 'id', 'asc', '0', '', '', '', '', 40),
 (117, 1, 0, 1, '', 'Цены', 'Цены', 'prices', 'prices', 12, 'article.article', 0, 'main', 'a_f_article', '68', '', '', '', '', '', '', '', 60),
-(113, 1, 0, 0, '', 'Главная', 'Главная', 'main', 'main', 13, 'article.article', 0, 'index', 'a_f_article', '29', '', '', '', '', '', '', '', 10),
+(113, 1, 0, 0, '', 'Главная', 'Студия звукозаписи «Аудиокузница»', 'main', 'main', 13, 'article.article', 0, 'index', 'a_f_article', '29', '', '', '', '', '', '', '', 10),
 (114, 1, 0, 1, '', 'Аудио-ролики', 'Аудио-ролики', 'audio', 'audio', 12, 'music.list', 0, 'main', 'default', '1', 'id', 'desc', '0', '', '', '', '', 20),
 (115, 1, 0, 1, '', 'Минусовки', 'Минусовки', 'minuses', 'minuses', 12, 'article.article', 0, 'main', 'a_f_article', '29', '', '', '', '', '', '', '', 30);
 
