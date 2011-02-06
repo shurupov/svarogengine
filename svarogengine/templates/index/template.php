@@ -66,7 +66,7 @@
 				<?php $renderer->render_block('text'); ?>
 			</div>
 			<div class="footer">
-				elfoff.net, 2010 &copy;
+				&laquo;Эльфов нет&raquo;, 2010 &copy;
 			</div>
 		</div>
 	</div>

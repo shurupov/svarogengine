@@ -113,7 +113,7 @@ div.recorder {
 	height: 1145px;
 	background-position: center 113px;
 	background-repeat: no-repeat;
-	background-image: url(/img/mainback3.png);
+	background-image: url(/img/mainback5.png);
 }
 div.recorder h1 {
 	color: #147800;
@@ -159,21 +159,21 @@ div.header div.right_contacts {
 	float: right;
 	padding-top: 25px;
 	text-align: right;
-	line-height: 40px;
+	line-height: 30px;
 }
 div.header div.right_contacts span.seven {
 	font-family: Arial;
-	font-size: 28px;
+	font-size: 20px;
 	color: #1e640f;
 }
 div.header div.right_contacts span.city_code {
 	font-family: Arial;
-	font-size: 38px;
+	font-size: 28px;
 	color: #323232;
 }
 div.header div.right_contacts span.phone {
 	font-family: Arial;
-	font-size: 38px;
+	font-size: 28px;
 	color: #dc0000;
 }
 div.header div.right_contacts a.email {
