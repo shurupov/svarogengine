@@ -62,7 +62,7 @@
 					"name" => "parent_id",
 					"title" => "Надгруппа",
 					"editor" => "select_from_db",
-					"typelist" => "article_folder",
+					"typelist" => "audio_folder",
 				),
 				"alias" => array(
 					"name" => "alias",

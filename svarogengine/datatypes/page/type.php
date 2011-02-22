@@ -127,6 +127,12 @@
 					"title" => "Видимость",
 					"editor" => "checkbox"
 				),
+				"menu_id" => array(
+					"name" => "menu_id",
+					"title" => "Меню",
+					"editor" => "select_from_db",
+					"typelist" => "menu",
+				),
 				"parent_id" => array(
 					"name" => "parent_id",
 					"title" => "Надраздел",

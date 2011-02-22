@@ -23,13 +23,18 @@
 					<![endif]-->
 				</div>
 				<div class="right_contacts">
-					<span class="seven">+7</span> <span class="city_code">(499)</span> <span class="phone">34-35-123</span>
-					<br/>
-					<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">03-00-123</span>
-					<br/>
-					<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
+					<noindex>
+						<span class="seven">+7</span> <span class="city_code">(499)</span> <span class="phone">34-35-123</span>
+						<br/>
+						<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">03-00-123</span>
+						<br/>
+						<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
+					</noindex>
 				</div>
-				<div style="clear: both; height: 850px; padding-top: 150px;">
+				<div style="clear: both; padding-top: 15px;">
+					<?php $renderer->render_block('top_menu'); ?>
+				</div>
+				<div style="clear: both; padding-top: 10px;">
 					
 					<div>
 						<div class="indexnews">
@@ -38,9 +43,12 @@
 						<div style="width: 215px; float: right;">
 							<?php $renderer->render_block('audio'); ?>
 						</div>
+						<div style="width: 500px; margin: auto;">
+							<?php $renderer->render_block('top_text'); ?>
+						</div>
 						<div style="clear: both;"></div>
 					</div>
-					<div class="indexlinks">
+					<!--<div class="indexlinks">
 						<div class="link" style="padding-top: 100px; width: 305px;">
 							<a href="/audio">Аудио-ролики</a>
 						</div>
@@ -58,7 +66,7 @@
 						</div>
 						
 						<div style="clear: both;"></div>
-					</div>
+					</div>-->
 					
 				</div>
 			</div>

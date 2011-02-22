@@ -23,14 +23,16 @@
 					<![endif]-->
 				</div>
 				<div class="right_contacts">
-					<span class="seven">+7</span> <span class="city_code">(499)</span> <span class="phone">34-35-123</span>
-					<br/>
-					<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">03-00-123</span>
-					<br/>
-					<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
+					<noindex>
+						<span class="seven">+7</span> <span class="city_code">(499)</span> <span class="phone">34-35-123</span>
+						<br/>
+						<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">03-00-123</span>
+						<br/>
+						<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
+					</noindex>
 				</div>
 				<div style="width: 300px; margin:auto; height: 159px;">
-					<?php $renderer->render_block('visual'); ?>
+					<?php //$renderer->render_block('visual'); ?>
 				</div>
 			</div>
 			<div>

@@ -110,10 +110,10 @@ div.header {
 	height: 174px;
 }
 div.recorder {
-	height: 1145px;
-	background-position: center 113px;
+	height: 850px;
+	background-position: center 540px;
 	background-repeat: no-repeat;
-	background-image: url(/img/mainback5.png);
+	background-image: url(/img/mainback7.png);
 }
 div.recorder h1 {
 	color: #147800;

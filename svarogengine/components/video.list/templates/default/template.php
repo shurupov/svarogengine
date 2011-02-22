@@ -1,7 +1,7 @@
 <div style="height: 390px; width: 640px; margin: auto;" id="videocontainer">
 	<object type="application/x-shockwave-flash" id="no-flash" data="http://www.youtube.com/v/<?=$params["video"][0]["code"]?>?fs=1" width="640" height="390" style="visibility: visible; "><param name="quality" value="high"><param name="bgcolor" value="#000000"><param name="allowfullscreen" value="true"><param name="allowscriptaccess" value="never"><param name="scale" value="scale"><param name="flashvars" value="autoplay=0"></object>
 </div>
-<div style="color: #1d650e; font-family: Arial; font-size: 20px; text-align: center; padding: 20px;">Выберите ролик для прсмотра</div>
+<div style="color: #1d650e; font-family: Arial; font-size: 20px; text-align: center; padding: 20px;">Выберите ролик для просмотра</div>
 <div style="height: 165px; padding-left: 64px; background-image: url(/img/videolist/left.png); background-position: left top; background-repeat: no-repeat;">
 	<div style="height: 165px; padding-right: 31px; background-image: url(/img/videolist/right.png); background-position: right top; background-repeat: no-repeat;">
 		<div style="background-image: url(/img/videolist/film.png); height: 165px;">
