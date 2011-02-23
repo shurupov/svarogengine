@@ -274,6 +274,62 @@
 			
 		}
 		
+		public static function move_element($datatype,$element_id,$direction='up') {
+			
+			global $datatypes;
+			
+			SQLExecuter::query("
+				SELECT 
+					`id`,
+					`sort`
+				FROM `".$datatypes[$datatype]["sql"]["table_name"]."`
+				WHERE `id`='".$element_id."'
+				LIMIT 1
+			");
+			
+			$current = SQLExecuter::fetch();
+			
+			switch ($direction) {
+				case 'up' : 
+					SQLExecuter::query("
+						SELECT 
+							`id`,
+							`sort`
+						FROM `".$datatypes[$datatype]["sql"]["table_name"]."`
+						WHERE `sort`<'".$current['sort']."'
+						ORDER BY `sort` DESC
+						LIMIT 1
+					");
+				break;
+				case 'down' : 
+					SQLExecuter::query("
+						SELECT 
+							`id`,
+							`sort`
+						FROM `".$datatypes[$datatype]["sql"]["table_name"]."`
+						WHERE `sort`>'".$current['sort']."'
+						ORDER BY `sort` ASC
+						LIMIT 1
+					");
+				break;
+			}
+			
+			$other = SQLExecuter::fetch();
+			
+			SQLExecuter::query("
+				UPDATE `".$datatypes[$datatype]["sql"]["table_name"]."`
+				SET `sort`='".$other['sort']."'
+				WHERE `id`='".$current['id']."'
+			");
+			SQLExecuter::query("
+				UPDATE `".$datatypes[$datatype]["sql"]["table_name"]."`
+				SET `sort`='".$current['sort']."'
+				WHERE `id`='".$other['id']."'
+			");
+			
+			
+		}
+		
 		public static function make_select_array($list,&$select,$depth_str='') {
 			foreach ($list as $element) {
 				$select[$element['id']] = $depth_str.$element['title'];

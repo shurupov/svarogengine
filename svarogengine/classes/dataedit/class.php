@@ -46,16 +46,27 @@
 			
 			switch ($action) {
 				
+				case 'delete' :
+					Datatypes::delete_element($datatype,$_GET['id']);					
+					header('location: /svarogengine/admin/dataedit/?page=list&type='.$datatype.'&field='.$field.'&value='.$value);
+					exit;
+				break;	
+				case 'moveup' :
+					Datatypes::move_element($datatype,$_GET['id'],'up');					
+					header('location: /svarogengine/admin/dataedit/?page=list&type='.$datatype.'&field='.$field.'&value='.$value);
+					exit;
+				break;
+				case 'movedown' :
+					Datatypes::move_element($datatype,$_GET['id'],'down');					
+					header('location: /svarogengine/admin/dataedit/?page=list&type='.$datatype.'&field='.$field.'&value='.$value);
+					exit;
+				break;
 				case 'list' :
 				default:
 					$data = Dataedit::fetch_list_data($datatype,$field,$value);
 					Dataedit::render_list_data($datatype,$data,$field,$value);
 				break;
-				case 'delete' :
-					Datatypes::delete_element($datatype,$_GET['id']);					
-					header('location: /svarogengine/admin/dataedit/?page=list&type='.$datatype.'&field='.$field.'&value='.$value);
-					exit;
-				break;
+
 			}
 			
 		}

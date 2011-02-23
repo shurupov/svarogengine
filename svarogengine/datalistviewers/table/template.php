@@ -17,8 +17,8 @@
 					<? foreach ($line as $field) { ?>
 						<td><?=$field?></td>
 					<? } ?>
-					<td style="width: 40px;"><? if ($kl) { ?><a href="/svarogengine/admin/dataedit/?page=list&action=moveup&id=<?$line['id']?>&type=<?=$data['type']?>&id=<?=$line['id']?>&field=<?=$_GET['field']?>&value=<?=$_GET['value']?>">вверх</a><? } ?></td>
-					<td style="width: 40px;"><? if ($kl<(count($data['data'])-1)) { ?><a href="/svarogengine/admin/dataedit/?page=list&action=movedown&id=<?$line['id']?>&type=<?=$data['type']?>&id=<?=$line['id']?>&field=<?=$_GET['field']?>&value=<?=$_GET['value']?>">вниз</a><? } ?></td>
+					<td style="width: 20px;"><? if ($kl) { ?><a href="/svarogengine/admin/dataedit/?page=list&action=moveup&id=<?$line['id']?>&type=<?=$data['type']?>&id=<?=$line['id']?>&field=<?=$_GET['field']?>&value=<?=$_GET['value']?>"><img style="height: 16px;" src="/img/admin/dataedit/moveup.png" /></a><? } ?></td>
+					<td style="width: 20px;"><? if ($kl<(count($data['data'])-1)) { ?><a href="/svarogengine/admin/dataedit/?page=list&action=movedown&id=<?$line['id']?>&type=<?=$data['type']?>&id=<?=$line['id']?>&field=<?=$_GET['field']?>&value=<?=$_GET['value']?>"><img style="height: 16px;" src="/img/admin/dataedit/movedown.png" /></a><? } ?></td>
 					<td style="padding: 0px 5px 0px 10px;">
 						<a href="/svarogengine/admin/dataedit/?page=edit&type=<?=$data['type']?>&id=<?=$line['id']?>"><img style="height: 16px;" src="/img/admin/dataedit/edit.png" /></a>
 						<a href="/svarogengine/admin/dataedit/?page=list&action=delete&type=<?=$data['type']?>&id=<?=$line['id']?>&field=<?=$_GET['field']?>&value=<?=$_GET['value']?>"><img style="height: 16px;" src="/img/admin/dataedit/delete.png" /></a>
