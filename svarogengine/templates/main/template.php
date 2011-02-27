@@ -16,10 +16,10 @@
 			<div class="header">
 				<div style="float: left;">
 					<!--[if !(IE )|(gt IE 6)]><!--> 
-					<a href="/"><img src="/img/logo.png" style="width: 177px; height: 159px;" /></a>
+					<a href="/"><img src="/img/logo2.png" style="width: 177px; height: 151px;" /></a>
 					<!--<![endif]-->
 					<!--[if lte IE 6]>
-					<a href="/"><img style="width: 177px; height: 159px;" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/logo.png', sizingMethod='scale');" src="/img/ie.gif" /></a>
+					<a href="/"><img style="width: 177px; height: 151px;" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/logo2.png', sizingMethod='scale');" src="/img/ie.gif" /></a>
 					<![endif]-->
 				</div>
 				<div class="right_contacts">
