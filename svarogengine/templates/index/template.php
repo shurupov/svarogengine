@@ -31,7 +31,7 @@
 						<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
 					</noindex>
 				</div>
-				<div style="clear: both; padding-top: 15px;">
+				<div style="clear: both; padding-top: 7px;">
 					<?php $renderer->render_block('top_menu'); ?>
 				</div>
 				<div style="clear: both; padding-top: 10px;">
