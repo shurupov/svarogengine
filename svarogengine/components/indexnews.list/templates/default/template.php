@@ -1,8 +1,8 @@
-	<h1>А в нашем цеху</h1>
-	<div style="height: 2px; border-top: 1px #dc0000 solid; border-bottom: 1px #dc0000 solid; margin: 15px 0px 15px 0px; font-size: 1px;"></div>
+<div style="border: 1px red solid; padding: 10px; margin: 10px;">
+	<h4>Список новостей</h4>
 	<? if (count($params["list"])) { ?>
 		<? foreach ($params["list"] as $text) { ?>
-			<div class="date"><?=date('d.m.Y',$text["date"])?></div>
-			<div class="text"><?=$text["text"]?></div>
+			<div><?=date('d.m.Y',$text["date"])?> <?=$text["text"]?></div>
 		<? } ?>
 	<? } ?>
+</div>

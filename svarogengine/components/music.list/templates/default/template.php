@@ -38,10 +38,10 @@
 				<tr rel="<?=$audio["file"]?>">
 					<td class="button play"></td>
 					<td><?=$audio["title"]?></td>
-					<!--<td><?=$audio["length"]?></td>
+					<td><?=$audio["length"]?></td>
 					<td><?=$audio["size"]?></td>
 					<td><?=$audio["style"]?></td>
-					<td><?=$audio["price"]?></td>-->
+					<td><?=$audio["price"]?></td>
 					<?if ($download) {?><td class="button save"><a href="<?=$audio["file"]?>">&nbsp;&nbsp;&nbsp;&nbsp;</a></td><?}?>
 				</tr>
 			<? } ?>

@@ -1,7 +1,7 @@
 	
 	<!--<h1><?php echo $params['request']['title']; ?></h1>-->
 	
-	<table style="width: 100%;">
+	<table>
 		<tr>
 			<td style="width: 50%; padding-right: 40px;">
 				<div class="article"><? echo $params["text"]; ?></div>

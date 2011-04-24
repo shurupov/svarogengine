@@ -3,49 +3,15 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>###TITLE###</title>
-
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<script src="/js/jquery-min.js"></script>
 	<script src="/js/tables.js"></script>
 </head>
 <body>
-	
-	<div class="bottomback">
-		<div class="content">
-			<div class="header">
-				<div style="float: left;">
-					<!--[if !(IE )|(gt IE 6)]><!--> 
-					<a href="/"><img src="/img/logo2.png" style="width: 177px; height: 151px;" /></a>
-					<!--<![endif]-->
-					<!--[if lte IE 6]>
-					<a href="/"><img style="width: 177px; height: 151px;" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/logo2.png', sizingMethod='scale');" src="/img/ie.gif" /></a>
-					<![endif]-->
-				</div>
-				<div class="right_contacts">
-					<noindex>
-						<span class="seven">+7</span> <span class="city_code">(499)</span> <span class="phone">34-35-123</span>
-						<br/>
-						<span class="seven">+7</span> <span class="city_code">(925)</span> <span class="phone">03-00-123</span>
-						<br/>
-						<a class="email" href="mailto:studio@elfoff.net">studio@elfoff.net</a>
-					</noindex>
-				</div>
-				<div style="width: 300px; margin:auto; height: 159px;">
-					<?php //$renderer->render_block('visual'); ?>
-				</div>
-			</div>
-			<div>
-				<?php $renderer->render_block('top_menu'); ?>
-			</div>
-			<div class="main_content">
-				<?php $renderer->render_main_block(); ?>
-			</div>
-			<div class="footer">
-				&laquo;Эльфов нет&raquo;, 2010 &copy;
-			</div>
-		</div>
+	<?php $renderer->render_block('top_menu'); ?>
+	<div style="border: 1px red solid; padding: 10px; margin: 10px;">
+		<?php $renderer->render_main_block(); ?>
 	</div>
-	
 </body>
 </html>
