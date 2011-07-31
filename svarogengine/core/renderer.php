@@ -104,8 +104,6 @@
 			
 			global $engine_root;
 			
-			echo $component['comptype_alias'];
-			
 			include $engine_root."/components/".$component['comptype_alias']."/properties.php";
 			
 			$parameters = array(
@@ -147,7 +145,6 @@
 				$cache_content = ob_get_contents();
 				ob_end_clean();
 				
-				echo $engine_root."/cache/components/".$component['comptype_alias']."/".$cachefile;
 				$this->write($engine_root."/cache/components/".$component['comptype_alias']."/".$cachefile,$cache_content);
 				//file_put_contents($engine_root."/cache/components/".$component['comptype_alias']."/".$cachefile,$cache_content);
 				return true;
