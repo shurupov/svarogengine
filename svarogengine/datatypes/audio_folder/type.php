@@ -43,8 +43,8 @@
 			),
 			"mainsubelement_type" => "audio_folder",
 			"in_root" => true, //Отображать в корне дерева
-			"list_settings" => array(
-				"viewer" => "simplelist",
+			"listviewer" => array(
+				"template" => "table",
 				"fields" => array(
 					"title" => array(
 						"name" => "title",

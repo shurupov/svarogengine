@@ -53,8 +53,8 @@
 			"subelement_types" => null,
 			"mainsubelement_type" => null,
 			"in_root" => false, //Не отображать в корне дерева
-			"list_settings" => array(
-				"viewer" => "simplelist",
+			"listviewer" => array(
+				"template" => "table",
 				"fields" => array(
 					"title" => array(
 						"name" => "title",

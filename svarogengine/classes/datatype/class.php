@@ -212,7 +212,7 @@
 			
 			global $datatypes;
 			
-			return $datatypes[$datatype]["dataedit"]["list_settings"]["fields"];
+			return $datatypes[$datatype]["dataedit"]["listviewer"]["fields"];
 			
 		}
 		

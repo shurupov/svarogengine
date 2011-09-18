@@ -1,4 +1,6 @@
 	
+	<? $renderer->add_to_head('<link rel="stylesheet" type="text/css" href="/svarogengine/datalistviewers/table/css/dataeditorcontainer.css">'); ?>
+	
 	<div class="containerlist">
 		
 		<b><?=$data['data_title']?></b><br/><br/>

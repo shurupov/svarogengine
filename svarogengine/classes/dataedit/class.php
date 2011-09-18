@@ -272,7 +272,11 @@
 		
 		public static function render_list_data($datatype,$info,$parent_field,$value,$action_type='list') {
 			
+			global $datatypes;
+			
 			$fields = Datatypes::get_datatype_list_fields($datatype);
+			
+			$list_template = $datatypes[$datatype]['dataedit']['listviewer']['template'];
 			
 			$data = array();
 			switch ($action_type) {
@@ -287,10 +291,9 @@
 			$data['parent_field_value'] = $value;
 			
 			global $renderer;
-			$renderer->add_to_head('<link rel="stylesheet" type="text/css" href="/css/admin/dataeditorcontainer.css">');
 			
 			global $engine_root;
-			include $engine_root.'/datalistviewers/table/template.php';
+			include $engine_root.'/datalistviewers/'.$list_template.'/template.php';
 			
 		}
 		
